@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CookbookXF.ViewModels
 {
-    internal class MainPageViewModel
+    internal class MainViewModel
     {
     }
 }
