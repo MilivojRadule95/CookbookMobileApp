@@ -1,33 +1,38 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CookbookXF.Models
 {
-    internal class Recipe
+
+    public class Recipe
     {
-        public string Meal { get; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
 
-        public string RecipeName { get; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
-        public string Description { get; }
+        [JsonProperty("steps")]
+        public List<Step> Steps { get; set; }
 
-        public Guid RecipeId { get; }
+        [JsonProperty("backgroundImage")]
+        public string BackgroundImage { get; set; }
 
-        public Recipe(string recipeName, string description, Guid recipeId)
-        {
-            RecipeName = recipeName;
-            Description = description;
+        [JsonProperty("thumbnailImage")]
+        public string ThumbnailImage { get; set; }
 
-            if (string.IsNullOrEmpty(recipeName))
-            {
-                throw new InvalidOperationException("Recipe title can't be empty!");
-            }
+        [JsonProperty("ingredients")]
+        public List<Ingredient> Ingredients { get; set; }
 
-            if (string.IsNullOrEmpty(description))
-            {
-                throw new InvalidOperationException(nameof(description));
-            }
-        }
+        [JsonProperty("shortDescription")]
+        public string ShortDescription { get; set; }
+
+        [JsonProperty("longDescription")]
+        public string LongDescription { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
     }
 }
