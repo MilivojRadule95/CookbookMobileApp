@@ -4,7 +4,8 @@
              x:Class="CookbookXF.MainPage">
 
     <Grid>
-            <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
+        
+        <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
                 <BoxView.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#eacda3" Offset="0.1"></GradientStop>
@@ -15,8 +16,9 @@
             </BoxView>
 
             <Grid Padding="10" ColumnSpacing="0" RowSpacing="0">
+            <Label Text="Secret Recipe" FontSize="50" HorizontalTextAlignment="Center" BackgroundColor="#e3c099"/>
 
-                <Button Grid.Row="1" Grid.Column="0"  WidthRequest="50" HeightRequest="150"
+            <Button Grid.Row="1" Grid.Column="0"  WidthRequest="50" HeightRequest="150"
                 FontSize="30" Text="Breakfast"/>
                 <Button Grid.Row="1" Grid.Column="1" WidthRequest="50" HeightRequest="150"
                 FontSize="30" Text="Lunch"/>
