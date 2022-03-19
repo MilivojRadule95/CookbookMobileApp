@@ -9,7 +9,7 @@ namespace CookbookXF
         public App()
         {
             InitializeComponent();
-
+            Device.SetFlags(new[] { "Brush_Experimental" });
             MainPage = new MainPage();
         }
 
