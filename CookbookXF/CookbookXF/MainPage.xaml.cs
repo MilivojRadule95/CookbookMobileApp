@@ -14,6 +14,8 @@ namespace CookbookXF
         {
             InitializeComponent();
             Task.Run(AnimateBackground);
+         
+
         }
         private async void AnimateBackground()
         {
@@ -27,6 +29,16 @@ namespace CookbookXF
                 bdGradient.Animate(name: "backward", callback: backward, start: 1, end: 0, length: 5000, easing: Easing.SinIn);
                 await Task.Delay(5000);
             }
+        }
+       
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+           
         }
     }
 }
