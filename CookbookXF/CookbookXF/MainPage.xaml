@@ -3,31 +3,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CookbookXF.MainPage">
 
-    <Grid> 
-               
-       <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
-            <BoxView.Background>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="#eacda3" Offset="0.1"></GradientStop>
-                    <GradientStop Color="#FF8C00" Offset="0.5"></GradientStop>
-                    <GradientStop Color="#d6ae7b" Offset="1.0"></GradientStop>
-                </LinearGradientBrush>
-            </BoxView.Background>
-        </BoxView>
+    <Grid Padding="10" ColumnSpacing="0" RowSpacing="0">
 
-        <Grid Padding="10" ColumnSpacing="0" RowSpacing="0">
 
-            <Image x:Name="breakfast" Source="breakfast.jpg" Grid.Row="1" Grid.Column="0"  WidthRequest="50" HeightRequest="150">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                </Image.GestureRecognizers>
-            </Image>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2"/>
+          
+        </Grid.ColumnDefinitions>
 
-            <ImageButton Grid.Row="1" Grid.Column="1" WidthRequest="50" HeightRequest="150"
-                Source="breakfast.jpg" Aspect="Fill" BackgroundColor="Transparent"/>
-            <Button Text="Left icon" ContentLayout="Left,5" Image="breakfast.jpg"  HorizontalOptions="Start" />
-            <Button Grid.Row="2" Grid.Column="1" WidthRequest="50" HeightRequest="150"
-                FontSize="30" Text="Dinner"/>
-               
-        </Grid></Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6"/>
+        
+    </Grid.RowDefinitions>
+    <Label Grid.Row="1" 
+               Grid.Column="1" 
+               Grid.ColumnSpan="2"
+               Text="Secret Recipes"
+               VerticalTextAlignment="Center"
+               FontSize="30"
+               HorizontalTextAlignment="Center"/>
+
+        <Button Grid.Row="1" Grid.Column="2" HeightRequest="100" WidthRequest="100"/>
+
+        <Button Grid.Row="3" Grid.Column="1" HeightRequest="200" WidthRequest="200"/>
+
+        <Button Grid.Row="3" Grid.Column="2" HeightRequest="200" WidthRequest="200"/>
+
+        <Button Grid.Row="5" Grid.Column="1" HeightRequest="200" WidthRequest="200"/>
+
+        <Button Grid.Row="5" Grid.Column="2" HeightRequest="200" WidthRequest="200"/>
+
+        <Label Grid.Row="4" 
+               Grid.Column="1"             
+               Text="Breakfast"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="20"/>
+
+        <Label Grid.Row="4" 
+               Grid.Column="2"
+               Text="Lunch"
+               FontSize="20"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="6" 
+               Grid.Column="1"
+               Text="Snacks"
+               FontSize="20"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="6" 
+               Grid.Column="2"
+               Text="Dinner"
+               FontSize="20"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"/>
+
+        
+    </Grid>
 </ContentPage>

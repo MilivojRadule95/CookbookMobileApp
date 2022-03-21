@@ -84,9 +84,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CookbookXF\CookbookXF.csproj">
       <Project>{F7B21C3B-D86D-43EA-9FCA-2F881EEB5DD9}</Project>
       <Name>CookbookXF</Name>
@@ -94,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\mipmap-anydpi-v26\breakfast.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
