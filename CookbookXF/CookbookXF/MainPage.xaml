@@ -23,15 +23,13 @@
                FontSize="30"
                HorizontalTextAlignment="Center"/>
 
-        <Button Grid.Row="1" Grid.Column="2" HeightRequest="100" WidthRequest="100" Clicked="Button_Clicked" Released="Button_Released" Pressed="Button_Pressed"/>
+        <Button Grid.Row="3" Grid.Column="2" HeightRequest="100" WidthRequest="100" ImageSource=""/>
 
-        <Button Grid.Row="3" Grid.Column="1" HeightRequest="200" WidthRequest="200" Clicked="Button_Clicked_1" Released="Button_Released_1" Pressed="Button_Pressed_2"/>
+        <Button Grid.Row="3" Grid.Column="1" HeightRequest="200" WidthRequest="200"/>
 
-        <Button Grid.Row="3" Grid.Column="2" HeightRequest="200" WidthRequest="200" Clicked="Button_Clicked_2" Released="Button_Released_2" Pressed="Button_Pressed_1"/>
+        <Button Grid.Row="5" Grid.Column="1" HeightRequest="200" WidthRequest="200"/>
 
-        <Button Grid.Row="5" Grid.Column="1" HeightRequest="200" WidthRequest="200" Clicked="Button_Clicked_3" Released="Button_Released_3" Pressed="Button_Pressed_3"/>
-
-        <Button Grid.Row="5" Grid.Column="2" HeightRequest="200" WidthRequest="200" Clicked="Button_Clicked_4" Released="Button_Clicked" Pressed="Button_Pressed_4"/>
+        <Button Grid.Row="5" Grid.Column="2" HeightRequest="200" WidthRequest="200"/>
 
         <Label Grid.Row="4" 
                Grid.Column="1"             
