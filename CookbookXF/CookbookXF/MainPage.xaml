@@ -7,15 +7,24 @@
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2"/>
-          
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="6"/>
-        
-    </Grid.RowDefinitions>
-    <Label Grid.Row="1" 
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="1" 
                Grid.Column="1" 
                Grid.ColumnSpan="2"
                Text="Secret Recipes"
@@ -23,40 +32,53 @@
                FontSize="30"
                HorizontalTextAlignment="Center"/>
 
-        <Button Grid.Row="3" Grid.Column="2" HeightRequest="100" WidthRequest="100" ImageSource=""/>
+        <Grid Style="{DynamicResource GridStyle}">
+            <Button WidthRequest="50"
+                    Grid.ColumnSpan="60"
+                    HorizontalOptions="End"
+                    HeightRequest="100"/>
 
-        <Button Grid.Row="3" Grid.Column="1" HeightRequest="200" WidthRequest="200"/>
+        </Grid>
 
-        <Button Grid.Row="5" Grid.Column="1" HeightRequest="200" WidthRequest="200"/>
+        <Button Grid.Row="3" Grid.Column="1" HeightRequest="50" WidthRequest="50"/>
 
-        <Button Grid.Row="5" Grid.Column="2" HeightRequest="200" WidthRequest="200"/>
+            <Button Grid.Row="3" Grid.Column="2" HeightRequest="50" WidthRequest="50"/>
+    
+            <Button Grid.Row="5" Grid.Column="1" HeightRequest="50" WidthRequest="50"/>
 
+            <Button Grid.Row="5" Grid.Column="2" HeightRequest="50" WidthRequest="50"/>
+
+        
+
+
+
+
+    <Label Grid.Row="3"
+               Grid.Column="1"/>
         <Label Grid.Row="4" 
                Grid.Column="1"             
                Text="Breakfast"
-               VerticalTextAlignment="Center"
+               VerticalTextAlignment="Start"
                HorizontalTextAlignment="Center"
                FontSize="20"/>
-
         <Label Grid.Row="4" 
                Grid.Column="2"
                Text="Lunch"
                FontSize="20"
-               VerticalTextAlignment="Center"
+               VerticalTextAlignment="Start"
                HorizontalTextAlignment="Center"/>
         <Label Grid.Row="6" 
                Grid.Column="1"
                Text="Snacks"
                FontSize="20"
-               VerticalTextAlignment="Center"
+               VerticalTextAlignment="Start"
                HorizontalTextAlignment="Center"/>
         <Label Grid.Row="6" 
                Grid.Column="2"
                Text="Dinner"
                FontSize="20"
-               VerticalTextAlignment="Center"
+               VerticalTextAlignment="Start"
                HorizontalTextAlignment="Center"/>
-
         
     </Grid>
 </ContentPage>

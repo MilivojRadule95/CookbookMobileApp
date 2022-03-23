@@ -93,7 +93,7 @@
     <EmbeddedResource Include="Resources\mipmap-anydpi-v26\breakfast.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <EmbeddedResource Include="Resources\drawable\food" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
