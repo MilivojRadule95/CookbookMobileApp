@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CookbookXF.Services
 {
-    internal class NavigationSrvice
+    internal class NavigationService
     {
         
     }

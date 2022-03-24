@@ -1,5 +1,4 @@
-﻿using CookbookXF.DataAccess;
-using CookbookXF.Services;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,8 +9,7 @@ namespace CookbookXF.ViewModels
 {
     internal class MainViewModel : BaseViewModel
     {
-        private readonly IRecipeRepository _recipeRepository;
-        private readonly INavigationService _navigationService;
+        
         public MainViewModel()
         {
             Property = "Cile Mile";
