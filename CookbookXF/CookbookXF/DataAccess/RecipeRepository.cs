@@ -25,7 +25,7 @@ namespace CookbookXF.DataAccess
             var data = File.ReadAllText(path);
             _recipe = JsonConvert.DeserializeObject<List<Recipe>>(data);
 
-            JsonConvert.DeserializeObject<Root>("recipe.jsonContent");
+            JsonConvert.DeserializeObject<RecipeList>("recipe.jsonContent");
         }
 
         public void AddRecipe(Recipe recipe)
@@ -34,9 +34,10 @@ namespace CookbookXF.DataAccess
             Save();
         }
 
-        public void DeleteRecipe(Guid id)
+        public void DeleteRecipe(string id)
         {
-            throw new NotImplementedException();
+            _recipe = _recipe.Where(n => n.Id != id).ToList();
+            Save();
         }
 
         private void Save()

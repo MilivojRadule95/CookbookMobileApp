@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CookbookXF.Services
+namespace CookbookXF.ViewModels
 {
-    internal class NavigationSrvice
+    internal class RecipeItemViewModel : BaseViewModel
     {
-        
     }
 }

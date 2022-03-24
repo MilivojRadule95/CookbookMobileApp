@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CookbookXF.Models
 {
-    public class Root
+    public class RecipeList
     {
         [JsonProperty("recipe")]
         public List<Recipe> Recipe { get; set; }

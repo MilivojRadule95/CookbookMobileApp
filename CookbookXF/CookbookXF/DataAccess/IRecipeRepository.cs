@@ -9,7 +9,7 @@ namespace CookbookXF.DataAccess
     {
         void AddRecipe(Recipe recipe);
 
-        void DeleteRecipe(Guid id);
+        void DeleteRecipe(string id);
 
         IEnumerable<Recipe> GetAllRecipes();
     }
