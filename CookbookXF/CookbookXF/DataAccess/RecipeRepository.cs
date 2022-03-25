@@ -12,7 +12,7 @@ namespace CookbookXF.DataAccess
     internal class RecipeRepository : IRecipeRepository
     {
         private List<Recipe> _recipe = new List<Recipe>();
-        private const string RecipeName = "notes.txt";
+        private const string RecipeName = "recipe.json";
 
         public void LoadRecipes()
         {
@@ -24,8 +24,6 @@ namespace CookbookXF.DataAccess
 
             var data = File.ReadAllText(path);
             _recipe = JsonConvert.DeserializeObject<List<Recipe>>(data);
-
-            JsonConvert.DeserializeObject<RecipeList>("recipe.jsonContent");
         }
 
         public void AddRecipe(Recipe recipe)
@@ -48,6 +46,24 @@ namespace CookbookXF.DataAccess
         public IEnumerable<Recipe> GetAllRecipes()
         {
             return _recipe.ToList();
+        }
+
+        // Sortiranje recepata po vrsti:
+        public IEnumerable<string> GetRecipeTypes()
+        {
+            return _recipe.Select(recipe => {return recipe.Type; }).Distinct();
+              
+            //List<string> types = new List<string>();
+
+            //foreach (var item in _recipe)
+            //{
+                
+            //    if (!types.Contains(item.Type))
+            //    {
+            //        types.Add(item.Type);
+            //    }
+            //}
+            //return types;
         }
     }
 }

@@ -17,24 +17,6 @@ namespace CookbookXF
         }
        
 
-        private void Breakfast_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Snack_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lunch_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Dinner_Clicked(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

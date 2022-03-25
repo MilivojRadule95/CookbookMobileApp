@@ -10,11 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace CookbookXF.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RecipesView : ContentPage
+    public partial class RecipeListView : ContentPage
     {
-        public RecipesView()
+        public RecipeListView()
         {
             InitializeComponent();
         }
+
+        
     }
 }

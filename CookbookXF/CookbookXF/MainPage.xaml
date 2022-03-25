@@ -14,33 +14,7 @@
         <Button Command="{Binding ChangePropertyValueCommand}"
                 Text="Dugme"/>
 
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-            <StackLayout>
-                <Button 
-                    x:Name="Breakfast" 
-                    Text="Breakfast" 
-                    BackgroundColor="Red"
-                    Clicked="Breakfast_Clicked"/>
-                <Button 
-                    x:Name="Snack" 
-                    Text="Snack" 
-                    BackgroundColor="Blue"
-                    Clicked="Snack_Clicked"/>
-            </StackLayout>
-
-            <StackLayout>
-                <Button 
-                    x:Name="Lunch" 
-                    Text="Lunch" 
-                    BackgroundColor="Black"
-                    Clicked="Lunch_Clicked"/>
-                <Button 
-                    x:Name="Dinner" 
-                    Text="Dinner" 
-                    BackgroundColor="BlanchedAlmond"
-                    Clicked="Dinner_Clicked"/>
-            </StackLayout>
-        </StackLayout>
+        
     </StackLayout>
    
 

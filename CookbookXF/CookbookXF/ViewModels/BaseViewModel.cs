@@ -10,7 +10,7 @@ namespace CookbookXF.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnePropertyChanged(string propertyName = null)
+        protected virtual void OnPropertyChanged(string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -21,47 +21,47 @@ namespace CookbookXF.ViewModels
         //    Title = title; 
         //}
 
-        private string _title;
+        //private string _title;
 
-        public string Title
-        {
-            get => _title;
-            set 
-            {
-                if (_title == value)
-                {
-                    return;
-                }
+        //public string Title
+        //{
+        //    get => _title;
+        //    set 
+        //    {
+        //        if (_title == value)
+        //        {
+        //            return;
+        //        }
 
-                _title = value;
+        //        _title = value;
 
-                OnePropertyChanged();
-            }
-        }
+        //        OnePropertyChanged();
+        //    }
+        //}
 
-        private bool _isBusy;
-        public bool IsNotBusy => !IsBusy;
+        //private bool _isBusy;
+        //public bool IsNotBusy => !IsBusy;
 
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set 
-            {
-                if (_isBusy == value)
-                {
-                    return;
-                } 
+        //public bool IsBusy
+        //{
+        //    get { return _isBusy; }
+        //    set 
+        //    {
+        //        if (_isBusy == value)
+        //        {
+        //            return;
+        //        } 
 
-                _isBusy = value;
+        //        _isBusy = value;
 
-                OnePropertyChanged();
-                OnePropertyChanged(nameof(IsNotBusy));
-            }
-        }
+        //        OnePropertyChanged();
+        //        OnePropertyChanged(nameof(IsNotBusy));
+        //    }
+        //}
 
-        //internet connection
-        private HttpClient _httpClient;
-        protected HttpClient Client => _httpClient ?? (_httpClient = new HttpClient());
+        ////internet connection
+        //private HttpClient _httpClient;
+        //protected HttpClient Client => _httpClient ?? (_httpClient = new HttpClient());
 
 
     }
