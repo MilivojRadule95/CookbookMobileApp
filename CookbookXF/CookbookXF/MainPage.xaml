@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:CookbookXF.ViewModels"
+             x:Class="CookbookXF.MainPage"
+             BackgroundColor="White"
+             BackgroundImageSource="pozadina.jpg">
+    
+
+    <StackLayout>
+
+        <Grid Padding="10" ColumnSpacing="0" RowSpacing="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="170"/>
+                <ColumnDefinition Width="185"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   Text=" Secret Recepies"
+                   
+                   TextColor="Brown" 
+                   FontSize="40" 
+                   FontAttributes="None" 
+                   Margin="15"/>
+
+            
+            <ImageButton WidthRequest="50"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="0"
+                    HorizontalOptions="End"
+                    HeightRequest="20"                   
+                    Source="https://cdn-icons-png.flaticon.com/512/126/126472.png"
+                         BackgroundColor="Transparent"
+                         />
+
+
+
+            <ImageButton Grid.Row="3" Grid.Column="1" Source="ivana.png" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="3" Grid.Column="2" Source="ivana.png" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="5" Grid.Column="1" Source="ivana.png" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="5" Grid.Column="2" Source="ivana.png" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent" />
+
+            <Label Grid.Row="4"
+                   Grid.Column="1"
+                   Text="Breakfast"
+                   TextColor="Brown"
+                   VerticalTextAlignment="Start"
+                   HorizontalTextAlignment="Center"
+                   FontSize="25"/>
+            <Label Grid.Row="4"
+                   Grid.Column="2"
+                   Text="Lunch"
+                   TextColor="Brown"
+                   VerticalTextAlignment="Start"
+                   HorizontalTextAlignment="Center"
+                   FontSize="25"/>
+            <Label Grid.Row="6"
+                   Grid.Column="1"
+                   Text="Snacks"
+                   TextColor="Brown"
+                   VerticalTextAlignment="Start"
+                   HorizontalTextAlignment="Center"
+                   FontSize="25"/>
+            <Label Grid.Row="6"
+                   Grid.Column="2"
+                   Text="Dinner"
+                   TextColor="Brown"
+                   VerticalTextAlignment="Start"
+                   HorizontalTextAlignment="Center"
+                   FontSize="25"/>
+            
+        </Grid>
+        
+    </StackLayout>
+</ContentPage>
