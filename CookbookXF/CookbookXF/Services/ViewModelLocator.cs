@@ -22,8 +22,7 @@ namespace CookbookXF.Services
 
 
 
-        public RecipeEditorViewModel RecipeEditorViewModel
-            => _serviceProvider.GetService<RecipeEditorViewModel>();
+       
 
     }
 }

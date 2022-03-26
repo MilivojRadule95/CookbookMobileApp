@@ -7,10 +7,12 @@ namespace CookbookXF.DataAccess
 {
     internal interface IRecipeRepository
     {
-        void AddRecipe(Recipe recipe);
+        //void AddRecipe(Recipe recipe);
 
-        void DeleteRecipe(string id);
+        //void DeleteRecipe(string id);
 
         IEnumerable<Recipe> GetAllRecipes();
+
+        IEnumerable<Recipe> GetRecipeByType(string type);
     }
 }

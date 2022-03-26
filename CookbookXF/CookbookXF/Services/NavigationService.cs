@@ -23,7 +23,7 @@ namespace CookbookXF.Services
         {
             var viewModel = App.Locator.RecipeListViewModel;
             viewModel.LoadRecipe();
-            Application.Current.MainPage.Navigation.PushModalAsync(new RecipeListView {BindingContext = viewModel });
+            Application.Current.MainPage.Navigation.PushModalAsync(new RecipeListView { BindingContext = viewModel });
         }
     }
 }

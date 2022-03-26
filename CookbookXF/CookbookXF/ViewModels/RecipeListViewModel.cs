@@ -1,4 +1,5 @@
 ﻿using CookbookXF.DataAccess;
+using CookbookXF.Models;
 using CookbookXF.Services;
 using System;
 using System.Collections.Generic;
@@ -42,25 +43,15 @@ namespace CookbookXF.ViewModels
 
         public void LoadRecipe()
         {
-            var recipeListViewModel = new List<RecipeItemViewModel>();
-            var recipe = _recipeRepository.GetAllRecipes();
+            List<RecipeItemViewModel> recipesListViewModel = new List<RecipeItemViewModel>();
+            IEnumerable<Recipe> recipes = _recipeRepository.GetRecipeByType("");
 
             foreach (var recipe in recipes)
             {
-                recipeViewModel.Add(new RecipeItemViewModel(recipe));
+                recipesListViewModel.Add(new RecipeItemViewModel(recipe));
             }
 
-           RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipeViewModel);
-        }
-
-        private void OnSelectedRecipeChangedCommand()
-        {
-            if (SelectedRecipe != null)
-            {
-                _navigationService.NavigateToRecipeEditor(SelectedRecipe.Recipe);
-            }
-
-            SelectedRecipe = null;
+            RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipesListViewModel);
         }
 
         public RecipeListViewModel()

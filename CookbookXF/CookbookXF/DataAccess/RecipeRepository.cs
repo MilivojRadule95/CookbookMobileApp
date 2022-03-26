@@ -8,14 +8,18 @@ using System.Text;
 using Xamarin.Essentials;
 
 namespace CookbookXF.DataAccess
-{
+{ 
     internal class RecipeRepository : IRecipeRepository
     {
+        
+
         private List<Recipe> _recipe = new List<Recipe>();
         private const string RecipeName = "recipe.json";
 
         public void LoadRecipes()
         {
+            var resourceName = typeof(RecipeRepository).Assembly.GetManifestResourceNames();
+
             var path = Path.Combine(FileSystem.AppDataDirectory, RecipeName);
             if (!File.Exists(path))
             {
@@ -26,17 +30,17 @@ namespace CookbookXF.DataAccess
             _recipe = JsonConvert.DeserializeObject<List<Recipe>>(data);
         }
 
-        public void AddRecipe(Recipe recipe)
-        {
-            _recipe.Add(recipe);
-            Save();
-        }
+        //public void AddRecipe(Recipe recipe)
+        //{
+        //    _recipe.Add(recipe);
+        //    Save();
+        //}
 
-        public void DeleteRecipe(string id)
-        {
-            _recipe = _recipe.Where(n => n.Id != id).ToList();
-            Save();
-        }
+        //public void DeleteRecipe(string id)
+        //{
+        //    _recipe = _recipe.Where(n => n.Id != id).ToList();
+        //    Save();
+        //}
 
         private void Save()
         {
@@ -48,7 +52,10 @@ namespace CookbookXF.DataAccess
             return _recipe.ToList();
         }
 
-        // Sortiranje recepata po vrsti:
+        /// <summary>
+        /// Dobijanje svih vrsta recepata:
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<string> GetRecipeTypes()
         {
             return _recipe.Select(recipe => {return recipe.Type; }).Distinct();
@@ -65,5 +72,21 @@ namespace CookbookXF.DataAccess
             //}
             //return types;
         }
+
+        /// <summary>
+        /// Dobijanje liste recepata koji pripadaju jednom tipu jela:
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public IEnumerable<Recipe> GetRecipeByType(string type)
+        {
+            if (!GetRecipeTypes().Contains(type))
+            {
+                return new List<Recipe>();
+            }
+            return _recipe.Where(recipe => recipe.Type == type).ToList();
+        }
+
+        
     }
 }

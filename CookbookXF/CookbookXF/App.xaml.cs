@@ -14,7 +14,7 @@ namespace CookbookXF
         public App()
         {
             InitializeComponent();
-            Device.SetFlags(new[] { "Brush_Experimental" });
+            
             MainPage = new NavigationPage(new MealsView());
             MainPage = new NavigationPage(new RecipeListView { BindingContext = Locator.RecipeListViewModel });
             
