@@ -56,19 +56,6 @@ namespace CookbookXF.ViewModels
             RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipesListViewModel);
         }
 
-        public RecipeItemViewModel SelectedRecipe
-        {
-            get
-            {
-                return _selectedRecipe;
-            }
-            set
-            {
-                _selectedRecipe = value;
-                OnPropertyChanged(nameof(SelectedRecipe));
-            }
-        }
-
         public ObservableCollection<RecipeItemViewModel> RecipeSource
         {
             get { return _recipeSource; }

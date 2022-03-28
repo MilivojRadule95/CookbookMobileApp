@@ -20,6 +20,7 @@ namespace CookbookXF
             SetupServices();
             
             MainPage = new NavigationPage(new MealsView { BindingContext = Locator.MealsViewModel });
+            
            
             
         }

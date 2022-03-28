@@ -5,9 +5,26 @@
              xmlns:viewmodel1="clr-namespace:CookbookXF.ViewModels"
              x:DataType="viewmodel1:RecipeListViewModel">
 
-
-    <ListView>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Text="RADI PLS" FontSize="100" HorizontalTextAlignment="Center"/>
+        <CollectionView SelectionMode="Single"
+                    ItemsSource="{Binding SelectedRecipe}"
+                    SelectedItem="{Binding RecipeSource}"
+                    >
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="viewmodel1:RecipeListViewModel">
+                <StackLayout Padding="15">
+                    <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="edfd"/>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
         
-    </ListView>
+      </CollectionView>
+    </Grid>
 
 </ContentPage>

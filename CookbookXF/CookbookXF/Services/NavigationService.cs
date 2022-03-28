@@ -30,11 +30,6 @@ namespace CookbookXF.Services
             }
         }
 
-        public void NavigateToNewRecipeList()
-        {
-            throw new NotImplementedException();
-        }
-
         public void NavigateToRecipeList(string type)
         {
             var viewModel = App.Locator.RecipeListViewModel;

@@ -23,7 +23,7 @@ namespace CookbookXF.ViewModels
             _recipeRepository = recipeRepository;
             _navigationService = navigation;
 
-
+            LoadRecipe("");
 
         }
 
