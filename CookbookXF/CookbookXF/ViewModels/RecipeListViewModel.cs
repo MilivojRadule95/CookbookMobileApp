@@ -18,6 +18,15 @@ namespace CookbookXF.ViewModels
         private ObservableCollection<RecipeItemViewModel> _recipeSource;
         private RecipeItemViewModel _selectedRecipe;
 
+        public RecipeListViewModel(IRecipeRepository recipeRepository, INavigationService navigation)
+        {
+            _recipeRepository = recipeRepository;
+            _navigationService = navigation;
+
+
+
+        }
+
         public ObservableCollection<RecipeItemViewModel> RecipeSource
         {
             get { return _recipeSource; }
@@ -54,21 +63,8 @@ namespace CookbookXF.ViewModels
             RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipesListViewModel);
         }
 
-        public RecipeListViewModel()
-        {
-            Property = "Cile Mile";
-            ChangePropertyValueCommand = new Command(OnChangePropertyValueCommand);
-        }
+        
 
-        private void OnChangePropertyValueCommand(object obj)
-        {
-            Property = "ergergrthrtger";
-            OnPropertyChanged((Property));
-
-        }
-
-        public string Property { get; set; }
-
-        public ICommand ChangePropertyValueCommand { get; set; }
+       
     }
 }

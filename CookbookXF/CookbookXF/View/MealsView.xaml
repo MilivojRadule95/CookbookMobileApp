@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:CookbookXF.ViewModels"
              x:Class="CookbookXF.View.MealsView"
-             Title="MealsView">
+             x:DataType="viewmodels:MealsViewModel">
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
             <StackLayout>
@@ -10,12 +10,12 @@
                     x:Name="Breakfast" 
                     Text="Breakfast" 
                     BackgroundColor="Red"
-                    Clicked="Breakfast_Clicked"/>
+                    Command="{Binding OpenListOfDishes}"/>
                 <Button 
                     x:Name="Snack" 
                     Text="Snack" 
                     BackgroundColor="Blue"
-                    Clicked="Snack_Clicked"/>
+                    Command="{Binding OpenListOfDishes}"/>
             </StackLayout>
 
             <StackLayout>
@@ -23,12 +23,12 @@
                     x:Name="Lunch" 
                     Text="Lunch" 
                     BackgroundColor="Black"
-                    Clicked="Lunch_Clicked"/>
+                    Command="{Binding OpenListOfDishes}"/>
                 <Button 
                     x:Name="Dinner" 
                     Text="Dinner" 
                     BackgroundColor="BlanchedAlmond"
-                    Clicked="Dinner_Clicked"/>
+                    Command="{Binding OpenListOfDishes}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

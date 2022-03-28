@@ -17,8 +17,9 @@ namespace CookbookXF
         public App()
         {
             InitializeComponent();
+            SetupServices();
             
-            MainPage = new NavigationPage(new MealsView());
+            MainPage = new NavigationPage(new MealsView { BindingContext = Locator.MealsViewModel });
             MainPage = new NavigationPage(new RecipeListView { BindingContext = Locator.RecipeListViewModel });
             
         }
@@ -36,16 +37,7 @@ namespace CookbookXF
             }
         }
 
-        private void SetupServices()
-        {
-            var serviceCollection = new ServiceCollection();
-            serviceCollection.AddTransient<MealsViewModel>();
-            serviceCollection.AddTransient<RecipeListViewModel>();
-            serviceCollection.AddTransient<RecipeDetailsViewModel>();
-            serviceCollection.AddSingleton<IRecipeRepository, RecipeRepository>();
-            serviceCollection.AddSingleton<INavigationService, NavigationService>();
-            _serviceProvider = serviceCollection.BuildServiceProvider();
-        }
+        
 
         protected override void OnStart()
         {
@@ -57,6 +49,17 @@ namespace CookbookXF
 
         protected override void OnResume()
         {
+        }
+
+        private void SetupServices()
+        {
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddTransient<MealsViewModel>();
+            serviceCollection.AddTransient<RecipeListViewModel>();
+            serviceCollection.AddTransient<RecipeDetailsViewModel>();
+            serviceCollection.AddSingleton<IRecipeRepository, RecipeRepository>();
+            serviceCollection.AddSingleton<INavigationService, NavigationService>();
+            _serviceProvider = serviceCollection.BuildServiceProvider();
         }
     }
 }

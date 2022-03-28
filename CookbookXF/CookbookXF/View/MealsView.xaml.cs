@@ -18,24 +18,6 @@ namespace CookbookXF.View
             InitializeComponent();
         }
 
-        private async void Breakfast_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new RecipeListView());
-        }
-
-        private void Snack_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lunch_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Dinner_Clicked(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

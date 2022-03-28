@@ -6,5 +6,6 @@ namespace CookbookXF.ViewModels
 {
     internal class RecipeDetailsViewModel : BaseViewModel
     {
+       
     }
 }
