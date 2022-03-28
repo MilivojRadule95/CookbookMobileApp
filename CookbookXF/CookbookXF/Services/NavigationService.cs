@@ -11,6 +11,13 @@ namespace CookbookXF.Services
 {
     internal class NavigationService : INavigationService
     {
+        public void NavigateToMealsView(string type)
+        {
+            var viewModel = App.Locator.MealsViewModel;
+            viewModel.LoadRecipe(type);
+            Application.Current.MainPage.Navigation.PushModalAsync(new MealsView { BindingContext = viewModel });
+        }
+
         public void GoBack()
         {
             Application.Current.MainPage.Navigation.PopModalAsync();

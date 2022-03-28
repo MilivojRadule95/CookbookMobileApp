@@ -13,6 +13,14 @@ namespace CookbookXF.ViewModels
 
             Title = recipe.Name;
             ShortDescription = recipe.ShortDescription;
+            Type = recipe.Type;
+            LongDescription = recipe.LongDescription;
+            Id = recipe.Id;
+            Steps = recipe.Steps;
+            BackgroundImage = recipe.BackgroundImage;
+            ThumbNailImage = recipe.ThumbnailImage;
+            Ingredients = recipe.Ingredients;
+
         }
 
         public Recipe Recipe { get; }
@@ -106,7 +114,6 @@ namespace CookbookXF.ViewModels
             }
         }
 
-        
         public string ShortDescription
         {
             get { return _shortDescription; }

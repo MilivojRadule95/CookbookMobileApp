@@ -23,21 +23,21 @@ namespace CookbookXF.ViewModels
             _navigationService = navigation;
 
             OpenListOfDishes = new Command(OnSelectOpenListOfDishes);
-            LoadAllCategoriesOfMeal();
-            LoadRecipe("Lunch");
+            LoadAllCategoriesOfMeal("");
+            LoadRecipe("");
             
 
 
         }
 
-        public void LoadAllCategoriesOfMeal()
+        public void LoadAllCategoriesOfMeal(string type)
         {
             List<RecipeItemViewModel> mealsViewModel = new List<RecipeItemViewModel>();
-            IEnumerable<Recipe> meals = _recipeRepository.GetRecipeByType("");
+            IEnumerable<Recipe> meals = _recipeRepository.GetRecipeByType(type);
 
             foreach (var meal in meals)
             {
-                mealsViewModel.Add(new MealsViewModel());
+                mealsViewModel.Add(new RecipeItemViewModel(meal));
             }
 
             RecipeSource = new ObservableCollection<RecipeItemViewModel>(mealsViewModel);
@@ -54,6 +54,19 @@ namespace CookbookXF.ViewModels
             }
 
             RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipesListViewModel);
+        }
+
+        public RecipeItemViewModel SelectedRecipe
+        {
+            get
+            {
+                return _selectedRecipe;
+            }
+            set
+            {
+                _selectedRecipe = value;
+                OnPropertyChanged(nameof(SelectedRecipe));
+            }
         }
 
         public ObservableCollection<RecipeItemViewModel> RecipeSource

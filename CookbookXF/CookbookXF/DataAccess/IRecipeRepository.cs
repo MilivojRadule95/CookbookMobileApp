@@ -13,6 +13,8 @@ namespace CookbookXF.DataAccess
 
         IEnumerable<Recipe> GetAllRecipes();
 
+        IEnumerable<string> GetRecipeTypes();
+
         IEnumerable<Recipe> GetRecipeByType(string type);
     }
 }
