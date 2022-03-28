@@ -41,10 +41,10 @@ namespace CookbookXF.ViewModels
             }
         }
 
-        public void LoadRecipe()
+        public void LoadRecipe(string type)
         {
             List<RecipeItemViewModel> recipesListViewModel = new List<RecipeItemViewModel>();
-            IEnumerable<Recipe> recipes = _recipeRepository.GetRecipeByType("");
+            IEnumerable<Recipe> recipes = _recipeRepository.GetRecipeByType(type);
 
             foreach (var recipe in recipes)
             {

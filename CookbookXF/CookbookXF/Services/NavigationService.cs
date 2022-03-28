@@ -19,10 +19,10 @@ namespace CookbookXF.Services
             throw new NotImplementedException();
         }
 
-        public void NavigateToRecipeList(IEnumerable<Recipe> recipes)
+        public void NavigateToRecipeList(string type)
         {
             var viewModel = App.Locator.RecipeListViewModel;
-            viewModel.LoadRecipe();
+            viewModel.LoadRecipe(type);
             Application.Current.MainPage.Navigation.PushModalAsync(new RecipeListView { BindingContext = viewModel });
         }
     }

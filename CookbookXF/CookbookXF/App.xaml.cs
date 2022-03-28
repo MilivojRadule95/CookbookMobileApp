@@ -1,5 +1,8 @@
-﻿using CookbookXF.Services;
+﻿using CookbookXF.DataAccess;
+using CookbookXF.Services;
 using CookbookXF.View;
+using CookbookXF.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -31,6 +34,17 @@ namespace CookbookXF
 
                 return _viewLocator;
             }
+        }
+
+        private void SetupServices()
+        {
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddTransient<MealsViewModel>();
+            serviceCollection.AddTransient<RecipeListViewModel>();
+            serviceCollection.AddTransient<RecipeDetailsViewModel>();
+            serviceCollection.AddSingleton<IRecipeRepository, RecipeRepository>();
+            serviceCollection.AddSingleton<INavigationService, NavigationService>();
+            _serviceProvider = serviceCollection.BuildServiceProvider();
         }
 
         protected override void OnStart()

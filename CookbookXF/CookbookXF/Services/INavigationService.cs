@@ -7,7 +7,7 @@ namespace CookbookXF.Services
 {
     internal interface INavigationService
     {
-        void NavigateToRecipeList(IEnumerable<Recipe> recipes);
+        void NavigateToRecipeList(string type);
 
         void NavigateToNewRecipeList();
 

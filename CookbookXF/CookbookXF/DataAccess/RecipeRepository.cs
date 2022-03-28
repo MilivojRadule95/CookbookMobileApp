@@ -13,7 +13,7 @@ namespace CookbookXF.DataAccess
     {
         
 
-        private List<Recipe> _recipe = new List<Recipe>();
+        private List<Recipe> _recipes = new List<Recipe>();
         private const string RecipeName = "recipe.json";
 
         public void LoadRecipes()
@@ -27,7 +27,7 @@ namespace CookbookXF.DataAccess
             }
 
             var data = File.ReadAllText(path);
-            _recipe = JsonConvert.DeserializeObject<List<Recipe>>(data);
+            _recipes = JsonConvert.DeserializeObject<List<Recipe>>(data);
         }
 
         //public void AddRecipe(Recipe recipe)
@@ -44,12 +44,12 @@ namespace CookbookXF.DataAccess
 
         private void Save()
         {
-            File.WriteAllText(Path.Combine(FileSystem.AppDataDirectory, RecipeName), JsonConvert.SerializeObject(_recipe));
+            File.WriteAllText(Path.Combine(FileSystem.AppDataDirectory, RecipeName), JsonConvert.SerializeObject(_recipes));
         }
 
         public IEnumerable<Recipe> GetAllRecipes()
         {
-            return _recipe.ToList();
+            return _recipes.ToList();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace CookbookXF.DataAccess
         /// <returns></returns>
         public IEnumerable<string> GetRecipeTypes()
         {
-            return _recipe.Select(recipe => {return recipe.Type; }).Distinct();
+            return _recipes.Select(recipe => {return recipe.Type; }).Distinct();
               
             //List<string> types = new List<string>();
 
@@ -84,7 +84,7 @@ namespace CookbookXF.DataAccess
             {
                 return new List<Recipe>();
             }
-            return _recipe.Where(recipe => recipe.Type == type).ToList();
+            return _recipes.Where(recipe => recipe.Type == type).ToList();
         }
 
         
