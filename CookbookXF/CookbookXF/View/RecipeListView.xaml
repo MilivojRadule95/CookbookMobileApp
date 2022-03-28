@@ -5,7 +5,9 @@
              xmlns:viewmodel1="clr-namespace:CookbookXF.ViewModels"
              x:DataType="viewmodel1:RecipeListViewModel">
 
-    
+    <StackLayout>
+        
+    </StackLayout>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
