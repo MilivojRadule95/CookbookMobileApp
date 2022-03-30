@@ -1,84 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CookbookXF.MainPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:CookbookXF.ViewModels"
+             x:Class="CookbookXF.MainPage"           
+             BackgroundImageSource="bg.png"
+            >
+    
 
-    <Grid Padding="10" ColumnSpacing="0" RowSpacing="0">
+    <StackLayout>
+
+        <Grid Padding="10" ColumnSpacing="0" RowSpacing="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   VerticalTextAlignment="Start"
+                   HorizontalTextAlignment="Center"
+                   Text="Breakfast"                  
+                   TextColor="Firebrick" 
+                   FontSize="35" 
+                   FontAttributes="None" 
+                   Margin="15"/>
 
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="500"/>
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
+            <ImageButton WidthRequest="80"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="0"
+                    HorizontalOptions="Start"
+                    HeightRequest="20"                   
+                    Source="back.png"
+                    BackgroundColor="Transparent"/>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="100"/>
-        </Grid.RowDefinitions>
 
-        <Label Grid.Row="1" 
-               Grid.Column="1" 
-               Grid.ColumnSpan="2"
-               Text="Secret Recipes"
-               VerticalTextAlignment="Center"
-               FontSize="30"
-               HorizontalTextAlignment="Center"/>
 
-        <Grid Style="{DynamicResource GridStyle}">
-            <Button WidthRequest="50"
-                    Grid.ColumnSpan="60"
-                    HorizontalOptions="End"
-                    HeightRequest="100"/>
+
+
+
 
         </Grid>
-
-        <Button Grid.Row="3" Grid.Column="1" HeightRequest="50" WidthRequest="50"/>
-
-            <Button Grid.Row="3" Grid.Column="2" HeightRequest="50" WidthRequest="50"/>
-    
-            <Button Grid.Row="5" Grid.Column="1" HeightRequest="50" WidthRequest="50"/>
-
-            <Button Grid.Row="5" Grid.Column="2" HeightRequest="50" WidthRequest="50"/>
-
-        
-
-
-
-
-    <Label Grid.Row="3"
-               Grid.Column="1"/>
-        <Label Grid.Row="4" 
-               Grid.Column="1"             
-               Text="Breakfast"
-               VerticalTextAlignment="Start"
-               HorizontalTextAlignment="Center"
-               FontSize="20"/>
-        <Label Grid.Row="4" 
-               Grid.Column="2"
-               Text="Lunch"
-               FontSize="20"
-               VerticalTextAlignment="Start"
-               HorizontalTextAlignment="Center"/>
-        <Label Grid.Row="6" 
-               Grid.Column="1"
-               Text="Snacks"
-               FontSize="20"
-               VerticalTextAlignment="Start"
-               HorizontalTextAlignment="Center"/>
-        <Label Grid.Row="6" 
-               Grid.Column="2"
-               Text="Dinner"
-               FontSize="20"
-               VerticalTextAlignment="Start"
-               HorizontalTextAlignment="Center"/>
-        
-    </Grid>
+    </StackLayout>
 </ContentPage>
