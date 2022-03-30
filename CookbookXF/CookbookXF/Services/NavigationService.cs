@@ -14,7 +14,7 @@ namespace CookbookXF.Services
         public void NavigateToMealsView(string type)
         {
             var viewModel = App.Locator.MealsViewModel;
-            viewModel.LoadRecipe(type);
+            //viewModel.LoadRecipe(type);
             Application.Current.MainPage.Navigation.PushModalAsync(new MealsView { BindingContext = viewModel });
         }
 
@@ -23,11 +23,11 @@ namespace CookbookXF.Services
             Application.Current.MainPage.Navigation.PopModalAsync();
 
             var lastView = Application.Current.MainPage.Navigation.NavigationStack.Last();
-            if (lastView is MealsView mealsView
-                && mealsView.BindingContext is MealsViewModel mealsViewModel)
-            {
-                mealsViewModel.LoadRecipe("");
-            }
+            //if (lastView is MealsView mealsView
+            //    && mealsView.BindingContext is MealsViewModel mealsViewModel)
+            //{
+            //    mealsViewModel.LoadRecipe("");
+            //}
         }
 
         public void NavigateToRecipeList(string type)

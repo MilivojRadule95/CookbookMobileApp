@@ -22,9 +22,9 @@ namespace CookbookXF.ViewModels
             _recipeRepository = recipeRepository;
             _navigationService = navigation;
 
-            OpenListOfDishes = new Command(OnSelectOpenListOfDishes);
-            LoadAllCategoriesOfMeal("");
-            LoadRecipe("");
+            OpenListOfDishes = new Command<string>(OnSelectOpenListOfDishes);
+            //LoadAllCategoriesOfMeal("");
+            
             
 
 
@@ -41,19 +41,7 @@ namespace CookbookXF.ViewModels
             }
 
             RecipeSource = new ObservableCollection<RecipeItemViewModel>(mealsViewModel);
-        }
 
-        public void LoadRecipe(string type)
-        {
-            List<RecipeItemViewModel> recipesListViewModel = new List<RecipeItemViewModel>();
-            IEnumerable<Recipe> recipes = _recipeRepository.GetRecipeByType(type);
-
-            foreach (var recipe in recipes)
-            {
-                recipesListViewModel.Add(new RecipeItemViewModel(recipe));
-            }
-
-            RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipesListViewModel);
         }
 
         public ObservableCollection<RecipeItemViewModel> RecipeSource
@@ -66,9 +54,9 @@ namespace CookbookXF.ViewModels
             }
         }
 
-        private void OnSelectOpenListOfDishes()
+        private void OnSelectOpenListOfDishes(string type)
         {
-            _navigationService.NavigateToRecipeList("Lunch");
+            _navigationService.NavigateToRecipeList(type);
         }
         public ICommand OpenListOfDishes { get; }
 

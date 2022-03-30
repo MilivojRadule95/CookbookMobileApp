@@ -10,7 +10,8 @@
                     x:Name="Breakfast" 
                     Text="Breakfast" 
                     BackgroundColor="Red"
-                    Command="{Binding OpenListOfDishes}"/>
+                    Command="{Binding OpenListOfDishes}"
+                    CommandParameter="Breakfast"/>
                 <Button 
                     x:Name="Snack" 
                     Text="Snack" 
