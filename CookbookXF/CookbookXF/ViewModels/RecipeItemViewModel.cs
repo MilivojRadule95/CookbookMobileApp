@@ -19,7 +19,7 @@ namespace CookbookXF.ViewModels
             Id = recipe.Id;
            
             BackgroundImage = recipe.BackgroundImage;
-            ThumbNailImage = ImageSource.FromResource($"CookbookXF.Resources.{recipe.ThumbnailImage}");
+            ThumbNailImage = ImageSource.FromResource($"{Constants.ResourcePrefix}{recipe.ThumbnailImage}");
             
 
         }

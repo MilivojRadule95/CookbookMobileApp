@@ -22,7 +22,7 @@ namespace CookbookXF.DataAccess
         public void LoadRecipes()
         {
             var resourceNames = typeof(RecipeRepository).Assembly.GetManifestResourceNames();
-            var stream = typeof(RecipeRepository).Assembly.GetManifestResourceStream($"CookbookXF.Resources.{RecipeName}" );
+            var stream = typeof(RecipeRepository).Assembly.GetManifestResourceStream($"{Constants.ResourcePrefix}{RecipeName}" );
 
             using (var reader = new StreamReader(stream))
             {
