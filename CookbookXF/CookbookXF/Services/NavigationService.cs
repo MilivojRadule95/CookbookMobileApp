@@ -41,7 +41,7 @@ namespace CookbookXF.Services
         {
             var viewModel = App.Locator.RecipeDetailsViewModel;
             viewModel.LoadDetails(type);
-            App.Current.MainPage.Navigation.PushModalAsync(new RecipeDetalisView { BindingContext = viewModel });
+            App.Current.MainPage.Navigation.PushModalAsync(new RecipeDetailsView { BindingContext = viewModel });
         }
     }
 }

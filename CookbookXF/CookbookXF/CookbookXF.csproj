@@ -87,6 +87,9 @@
     <Compile Update="View\MealsView.xaml.cs">
       <DependentUpon>MealsView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="View\RecipeDetailsView.xaml.cs">
+      <DependentUpon>RecipeDetailsView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\RecipeListView.xaml.cs">
       <DependentUpon>RecipeListView.xaml</DependentUpon>
     </Compile>
@@ -96,7 +99,7 @@
     <EmbeddedResource Update="View\MealsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RecipeDetalisView.xaml">
+    <EmbeddedResource Update="View\RecipeDetailsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\RecipeListView.xaml">

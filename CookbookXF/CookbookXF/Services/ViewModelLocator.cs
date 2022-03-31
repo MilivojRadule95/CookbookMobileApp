@@ -8,8 +8,6 @@ namespace CookbookXF.Services
 {
     internal class ViewModelLocator
     {
-        public RecipeListViewModel RecipeListViewModel => _serviceProvider.GetService<RecipeListViewModel>();
-
         private readonly IServiceProvider _serviceProvider;
 
         public ViewModelLocator(IServiceProvider serviceProvider)
@@ -17,12 +15,9 @@ namespace CookbookXF.Services
             _serviceProvider = serviceProvider;
         }
 
+        public RecipeListViewModel RecipeListViewModel => _serviceProvider.GetService<RecipeListViewModel>();
         public MealsViewModel MealsViewModel => _serviceProvider.GetService<MealsViewModel>();
         public RecipeDetailsViewModel RecipeDetailsViewModel => _serviceProvider.GetService<RecipeDetailsViewModel>();
-
-
-
-       
 
     }
 }
