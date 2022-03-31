@@ -29,19 +29,19 @@ namespace CookbookXF.ViewModels
 
         }
 
-        public void LoadAllCategoriesOfMeal(string type)
-        {
-            List<RecipeItemViewModel> mealsViewModel = new List<RecipeItemViewModel>();
-            IEnumerable<Recipe> meals = _recipeRepository.GetRecipeByType(type);
+        //public void LoadAllCategoriesOfMeal(string type)
+        //{
+        //    List<RecipeItemViewModel> mealsViewModel = new List<RecipeItemViewModel>();
+        //    IEnumerable<Recipe> meals = _recipeRepository.GetRecipeByType(type);
 
-            foreach (var meal in meals)
-            {
-                mealsViewModel.Add(new RecipeItemViewModel(meal));
-            }
+        //    foreach (var meal in meals)
+        //    {
+        //        mealsViewModel.Add(new RecipeItemViewModel(meal)); 
+        //    }
 
-            RecipeSource = new ObservableCollection<RecipeItemViewModel>(mealsViewModel);
+        //    RecipeSource = new ObservableCollection<RecipeItemViewModel>(mealsViewModel);
 
-        }
+        //}
 
         public ObservableCollection<RecipeItemViewModel> RecipeSource
         {

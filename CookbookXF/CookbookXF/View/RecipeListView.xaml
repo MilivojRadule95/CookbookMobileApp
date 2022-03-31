@@ -11,12 +11,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+
         <CollectionView SelectionMode="Single"
                     ItemsSource="{Binding RecipeSource}"
                     SelectedItem="{Binding SelectedRecipe}"
-                    >
-        <CollectionView.ItemTemplate>
+                        SelectionChangedCommand="{Binding OpenRecipeDetails}">
+            <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="viewmodel1:RecipeItemViewModel">
                 <StackLayout Padding="15">
                     <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Title}"/>
@@ -27,6 +27,7 @@
         </CollectionView.ItemTemplate>
         
       </CollectionView>
+        
     </Grid>
 
 </ContentPage>
