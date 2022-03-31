@@ -15,13 +15,7 @@ namespace CookbookXF.ViewModels
             Title = recipe.Name;
             ShortDescription = recipe.ShortDescription;
             Type = recipe.Type;
-            LongDescription = recipe.LongDescription;
-            Id = recipe.Id;
-           
-            BackgroundImage = recipe.BackgroundImage;
             ThumbNailImage = ImageSource.FromResource($"{Constants.ResourcePrefix}{recipe.ThumbnailImage}");
-            
-
         }
 
         public Recipe Recipe { get; }
@@ -29,22 +23,8 @@ namespace CookbookXF.ViewModels
         private string _title;
         private string _shortDescription;
         private string _type;
-        private string _longDescription;
-        private string _id;
-        private List<Step> _steps;
-        private string _backgroundImage;
         private ImageSource _thumbNailImage;
-        private List<Ingredient> _ingredients;
-
-        public List<Ingredient> Ingredients
-        {
-            get { return _ingredients; }
-            set
-            {
-                _ingredients = value;
-                OnPropertyChanged(nameof(Ingredient));
-            }
-        }
+       
         public ImageSource ThumbNailImage
         {
             get { return _thumbNailImage; }
@@ -52,46 +32,6 @@ namespace CookbookXF.ViewModels
             {
                 _thumbNailImage = value;
                 OnPropertyChanged(nameof(ThumbNailImage));
-            }
-        }
-
-        public string BackgroundImage
-        {
-            get { return _backgroundImage; }
-            set
-            {
-                _backgroundImage = value;
-                OnPropertyChanged(nameof(BackgroundImage));
-            }
-        }
-
-        public List<Step> Steps
-        {
-            get { return _steps; }
-            set 
-            {
-                _steps = value;
-                OnPropertyChanged(nameof(Steps));
-            }
-        }
-
-        public string Id
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                OnPropertyChanged(nameof(Id));
-            }
-        }
-
-        public string LongDescription
-        {
-            get { return _longDescription; }
-            set 
-            {
-                _longDescription = value;
-                OnPropertyChanged(nameof(LongDescription));
             }
         }
 

@@ -16,7 +16,8 @@
                     x:Name="Snack" 
                     Text="Snack" 
                     BackgroundColor="Blue"
-                    Command="{Binding OpenListOfDishes}"/>
+                    Command="{Binding OpenListOfDishes}"
+                    CommandParameter="Snack"/>
             </StackLayout>
 
             <StackLayout>
@@ -24,12 +25,14 @@
                     x:Name="Lunch" 
                     Text="Lunch" 
                     BackgroundColor="Black"
-                    Command="{Binding OpenListOfDishes}"/>
+                    Command="{Binding OpenListOfDishes}"
+                    CommandParameter="Lunch"/>
                 <Button 
                     x:Name="Dinner" 
                     Text="Dinner" 
                     BackgroundColor="BlanchedAlmond"
-                    Command="{Binding OpenListOfDishes}"/>
+                    Command="{Binding OpenListOfDishes}"
+                    CommandParameter="Dinner"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

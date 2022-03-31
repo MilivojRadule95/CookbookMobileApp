@@ -63,6 +63,15 @@ namespace CookbookXF.ViewModels
             RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipesListViewModel);
         }
 
+        private void OnSelectOpenRecipeDetails(string type)
+        {
+            _navigationService.NavigateToRecipeDetailsView(type);
+        }
+
+        public ICommand OpenRecipeDetails { get; }
+        
+        
+
         
 
        

@@ -8,7 +8,8 @@ namespace CookbookXF.Services
     internal interface INavigationService
     {
         void NavigateToMealsView(string type);
-        void NavigateToRecipeList(string type);
+        void NavigateToRecipeListView(string type);
+        void NavigateToRecipeDetailsView(string type);
         void GoBack();
 
     }

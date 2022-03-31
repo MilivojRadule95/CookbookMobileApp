@@ -30,17 +30,18 @@ namespace CookbookXF.Services
             //}
         }
 
-        public void NavigateToRecipeList(string type)
+        public void NavigateToRecipeListView(string type)
         {
             var viewModel = App.Locator.RecipeListViewModel;
             viewModel.LoadRecipe(type);
             Application.Current.MainPage.Navigation.PushModalAsync(new RecipeListView { BindingContext = viewModel });
         }
 
-        public void NavigateToRecipeDetails()
+        public void NavigateToRecipeDetailsView(string type)
         {
             var viewModel = App.Locator.RecipeDetailsViewModel;
-            
+            viewModel.LoadDetails(type);
+            App.Current.MainPage.Navigation.PushModalAsync(new RecipeDetalisView { BindingContext = viewModel });
         }
     }
 }

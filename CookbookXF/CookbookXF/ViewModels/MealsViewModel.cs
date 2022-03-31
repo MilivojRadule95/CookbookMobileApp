@@ -14,9 +14,8 @@ namespace CookbookXF.ViewModels
     {
         private readonly IRecipeRepository _recipeRepository;
         private readonly INavigationService _navigationService;
-
         private ObservableCollection<RecipeItemViewModel> _recipeSource;
-        private RecipeItemViewModel _selectedRecipe;
+        
         public MealsViewModel(IRecipeRepository recipeRepository, INavigationService navigation)
         {
             _recipeRepository = recipeRepository;
@@ -56,7 +55,7 @@ namespace CookbookXF.ViewModels
 
         private void OnSelectOpenListOfDishes(string type)
         {
-            _navigationService.NavigateToRecipeList(type);
+            _navigationService.NavigateToRecipeListView(type);
         }
         public ICommand OpenListOfDishes { get; }
 
