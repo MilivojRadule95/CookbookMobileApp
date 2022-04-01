@@ -65,7 +65,7 @@ namespace CookbookXF.ViewModels
 
         private void OnSelectOpenListOfDishes(string type)
         {
-            _navigationService.NavigateToRecipeListView(type);
+            _navigationService.NavigateToRecipeListView(Category.Type);
         }
         public ICommand OpenListOfDishes { get; }
 

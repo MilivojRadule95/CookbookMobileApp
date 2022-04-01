@@ -11,6 +11,7 @@ namespace CookbookXF.ViewModels
             Type = category;
         }
 
+        public string Recipe { get; set; }
         private string _type;
 
         public string Type
