@@ -22,21 +22,18 @@ namespace CookbookXF.ViewModels
             _navigationService = navigation;
 
             OpenListOfDishes = new Command<string>(OnSelectOpenListOfDishes);
-            //LoadAllCategoriesOfMeal("");
             
-            
-
-
         }
 
-        //public void LoadAllCategoriesOfMeal(string type)
+
+        //public void LoadAllCategoriesOfMeal()
         //{
         //    List<RecipeItemViewModel> mealsViewModel = new List<RecipeItemViewModel>();
-        //    IEnumerable<Recipe> meals = _recipeRepository.GetRecipeByType(type);
+        //    IEnumerable<Recipe> meals = _recipeRepository.GetRecipeTypes();
 
         //    foreach (var meal in meals)
         //    {
-        //        mealsViewModel.Add(new RecipeItemViewModel(meal)); 
+        //        mealsViewModel.Add(new RecipeItemViewModel(meal));
         //    }
 
         //    RecipeSource = new ObservableCollection<RecipeItemViewModel>(mealsViewModel);

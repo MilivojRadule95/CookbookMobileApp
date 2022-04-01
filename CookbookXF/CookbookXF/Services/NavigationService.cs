@@ -14,6 +14,7 @@ namespace CookbookXF.Services
         public void NavigateToMealsView(string type)
         {
             var viewModel = App.Locator.MealsViewModel;
+            //viewModel.LoadAllCategoriesOfMeal();
             Application.Current.MainPage.Navigation.PushModalAsync(new MealsView { BindingContext = viewModel });
         }
 

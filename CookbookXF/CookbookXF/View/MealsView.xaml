@@ -4,6 +4,23 @@
              x:Class="CookbookXF.View.MealsView"
              x:DataType="viewmodels:MealsViewModel">
     <ContentPage.Content>
+        <!--
+        <Grid>
+            <CollectionView SelectionMode="Single"
+                            ItemsSource="{Binding RecipeSource}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
+                        <StackLayout>
+                            <Label FontSize="30" Text="{Binding Type}"/>
+                        </StackLayout>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+        </Grid>
+        -->
+        
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
             <StackLayout>
                 <Button 
@@ -35,5 +52,6 @@
                     CommandParameter="Dinner"/>
             </StackLayout>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

@@ -3,12 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:CookbookXF.ViewModels"
              x:Class="CookbookXF.View.RecipeDetailsView"
-             x:DataType="viewmodels:RecipeDetailsViewModel">
+             x:DataType="viewmodels:RecipeDetailsViewModel"
+             >
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+           
+            
+            <CollectionView SelectionMode="Single"
+                            ItemsSource="{Binding DetailsSource}"
+                            SelectedItem="{Binding SelectedDetails}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:DetailsInfoViewModel">
+                        <StackLayout>
+                            <Label FontSize="30" Text="{Binding Title}"/>
+                            <Label FontSize="30" Text="{Binding LongDescription}"/>
+                            <Label FontSize="30" Text="{Binding Ingredient}"/>
+                            <Label FontSize="30" Text="{Binding Steps}"/>
+                            <Image Source="{Binding BackgroundImage}"/>
+                        </StackLayout>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -11,16 +11,16 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
         <CollectionView SelectionMode="Single"
                     ItemsSource="{Binding RecipeSource}"
                     SelectedItem="{Binding SelectedRecipe}"
                         SelectionChangedCommand="{Binding OpenRecipeDetails}">
             <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="viewmodel1:RecipeItemViewModel">
-                <StackLayout Padding="15">
-                    <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Title}"/>
-                        <Label/>
+                    <StackLayout Padding="15">
+                        <Label FontSize="30"  Text="{Binding Type}"/>
+                        <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Title}"/>
+                        <Label FontSize="30" Text="{Binding ShortDescription}"/>
                         <Image Source="{Binding ThumbNailImage}"/>
                     </StackLayout>
             </DataTemplate>

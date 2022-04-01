@@ -21,7 +21,7 @@ namespace CookbookXF.ViewModels
             _recipeRepository = recipeRepository;
             _navigationService = navigationService;
         }
-        private ObservableCollection<DetailsInfoViewModel> DetailsSource
+        public ObservableCollection<DetailsInfoViewModel> DetailsSource
         {
             get { return _detailsSource; }
             set 
