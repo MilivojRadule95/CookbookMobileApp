@@ -9,7 +9,7 @@ namespace CookbookXF.Services
     {
         void NavigateToMealsView(string type);
         void NavigateToRecipeListView(string type);
-        void NavigateToRecipeDetailsView(string type);
+        void NavigateToRecipeDetailsView(Recipe recipe);
         void GoBack();
 
     }

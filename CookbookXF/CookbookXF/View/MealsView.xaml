@@ -4,12 +4,15 @@
              x:Class="CookbookXF.View.MealsView"
              x:DataType="viewmodels:MealsViewModel">
     <ContentPage.Content>
-        <!--
+       
         <Grid>
-            <CollectionView SelectionMode="Single"
-                            ItemsSource="{Binding RecipeSource}">
+            <CollectionView  
+                SelectionMode="Single"
+                ItemsSource="{Binding RecipeSource}"
+                SelectedItem="{Binding Category}"
+                SelectionChangedCommand="{Binding OpenListOfDishes}">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
+                    <DataTemplate x:DataType="viewmodels:MealsCategoryViewModel">
                         <StackLayout>
                             <Label FontSize="30" Text="{Binding Type}"/>
                         </StackLayout>
@@ -19,39 +22,6 @@
                 
             </CollectionView>
         </Grid>
-        -->
-        
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-            <StackLayout>
-                <Button 
-                    x:Name="Breakfast" 
-                    Text="Breakfast" 
-                    BackgroundColor="Red"
-                    Command="{Binding OpenListOfDishes}"
-                    CommandParameter="Breakfast"/>
-                <Button 
-                    x:Name="Snack" 
-                    Text="Snack" 
-                    BackgroundColor="Blue"
-                    Command="{Binding OpenListOfDishes}"
-                    CommandParameter="Snack"/>
-            </StackLayout>
-
-            <StackLayout>
-                <Button 
-                    x:Name="Lunch" 
-                    Text="Lunch" 
-                    BackgroundColor="Black"
-                    Command="{Binding OpenListOfDishes}"
-                    CommandParameter="Lunch"/>
-                <Button 
-                    x:Name="Dinner" 
-                    Text="Dinner" 
-                    BackgroundColor="BlanchedAlmond"
-                    Command="{Binding OpenListOfDishes}"
-                    CommandParameter="Dinner"/>
-            </StackLayout>
-        </StackLayout>
-        
+       
     </ContentPage.Content>
 </ContentPage>

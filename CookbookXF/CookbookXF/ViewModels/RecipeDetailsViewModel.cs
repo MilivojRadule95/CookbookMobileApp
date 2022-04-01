@@ -1,10 +1,7 @@
 ﻿using CookbookXF.DataAccess;
 using CookbookXF.Models;
 using CookbookXF.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace CookbookXF.ViewModels
 {
@@ -44,17 +41,9 @@ namespace CookbookXF.ViewModels
             }
         }
 
-        public void LoadDetails(string type)
+        public void LoadDetails(Recipe recipe)
         {
-            List<DetailsInfoViewModel> recipeDetailsViewModel = new List<DetailsInfoViewModel>();
-            IEnumerable<Recipe> recipes = _recipeRepository.GetRecipeByType(type);
-
-            foreach (var recipe in recipes)
-            {
-                recipeDetailsViewModel.Add(new DetailsInfoViewModel(recipe));
-            }
-
-            DetailsSource = new ObservableCollection<DetailsInfoViewModel>(recipeDetailsViewModel);
+            DetailsSource = new ObservableCollection<DetailsInfoViewModel>() { new DetailsInfoViewModel(recipe)};
         }
 
         

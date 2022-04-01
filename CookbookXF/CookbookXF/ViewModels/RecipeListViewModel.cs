@@ -65,7 +65,7 @@ namespace CookbookXF.ViewModels
 
         private void OnSelectOpenRecipeDetails(string type)
         {
-            _navigationService.NavigateToRecipeDetailsView(type);
+            _navigationService.NavigateToRecipeDetailsView(SelectedRecipe.Recipe);
         }
 
         public ICommand OpenRecipeDetails { get; }

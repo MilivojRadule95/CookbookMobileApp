@@ -14,7 +14,7 @@ namespace CookbookXF.Services
         public void NavigateToMealsView(string type)
         {
             var viewModel = App.Locator.MealsViewModel;
-            //viewModel.LoadAllCategoriesOfMeal();
+            viewModel.LoadAllCategoriesOfMeal();
             Application.Current.MainPage.Navigation.PushModalAsync(new MealsView { BindingContext = viewModel });
         }
 
@@ -37,10 +37,10 @@ namespace CookbookXF.Services
             Application.Current.MainPage.Navigation.PushModalAsync(new RecipeListView { BindingContext = viewModel });
         }
 
-        public void NavigateToRecipeDetailsView(string type)
+        public void NavigateToRecipeDetailsView(Recipe recipe)
         {
             var viewModel = App.Locator.RecipeDetailsViewModel;
-            viewModel.LoadDetails(type);
+            viewModel.LoadDetails(recipe);
             Application.Current.MainPage.Navigation.PushModalAsync(new RecipeDetailsView { BindingContext = viewModel });
         }
     }
