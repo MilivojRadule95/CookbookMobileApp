@@ -2,22 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:CookbookXF.ViewModels"
              x:Class="CookbookXF.View.MealsView"
-             x:DataType="viewmodels:MealsViewModel">
+             x:DataType="viewmodels:MealsViewModel"
+             BackgroundImageSource="bg.png">
     <ContentPage.Content>
-       
+
         <Grid>
-            <CollectionView  
+
+            <CollectionView  Margin="0,40,0,0" Grid.Row="0"
                 SelectionMode="Single"
                 ItemsSource="{Binding RecipeSource}"
                 SelectedItem="{Binding Category}"
                 SelectionChangedCommand="{Binding OpenListOfDishes}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2">
+                        
+                    </GridItemsLayout>
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:MealsCategoryViewModel">
-                        <StackLayout>
-                            <Label FontSize="30" Text="{Binding Type}"/>
+                    <StackLayout>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Image Aspect="AspectFill" 
+                                       Source="{Binding Image}" 
+                                       WidthRequest="200" 
+                                       HeightRequest="200" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center"/>
+                                <Label FontSize="0" Text="{Binding Type}"/>
+                           </Grid>
                         </StackLayout>
                         
-                    </DataTemplate>
+
+                </DataTemplate>
                 </CollectionView.ItemTemplate>
                 
             </CollectionView>
