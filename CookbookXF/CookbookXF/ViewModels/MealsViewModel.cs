@@ -14,10 +14,11 @@ namespace CookbookXF.ViewModels
     {
         private Dictionary<string, string> _typeImageMap = new Dictionary<string, string>
         {
-            { "Lunch", "lunch.png" },
             { "Breakfast", "breakfast.png" },
+            { "Snack", "snack.png" },
+            { "Lunch", "lunch.png" },          
             { "Dinner", "dinner.png" },
-            { "Snack", "snack.png" }
+            
             
         };
         private readonly IRecipeRepository _recipeRepository;
