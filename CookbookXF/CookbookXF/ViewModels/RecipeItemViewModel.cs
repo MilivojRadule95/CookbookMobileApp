@@ -1,7 +1,5 @@
 ﻿using CookbookXF.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Xamarin.Forms;
 
 namespace CookbookXF.ViewModels
 {
@@ -13,11 +11,36 @@ namespace CookbookXF.ViewModels
 
             Title = recipe.Name;
             ShortDescription = recipe.ShortDescription;
+            Type = recipe.Type;
+            ThumbNailImage = ImageSource.FromResource($"{Constants.ResourcePrefix}{recipe.ThumbnailImage}");
         }
 
         public Recipe Recipe { get; }
 
         private string _title;
+        private string _shortDescription;
+        private string _type;
+        private ImageSource _thumbNailImage;
+       
+        public ImageSource ThumbNailImage
+        {
+            get { return _thumbNailImage; }
+            set
+            {
+                _thumbNailImage = value;
+                OnPropertyChanged(nameof(ThumbNailImage));
+            }
+        }
+
+        public string Type
+        {
+            get { return _type; }
+            set
+            { 
+                _type = value; 
+                OnPropertyChanged(nameof(Type));
+            }
+        }
 
         public string Title
         {
@@ -28,8 +51,6 @@ namespace CookbookXF.ViewModels
                 OnPropertyChanged(nameof(Title));
             }
         }
-
-        private string _shortDescription;
 
         public string ShortDescription
         {

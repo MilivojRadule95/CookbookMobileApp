@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CookbookXF.View.RecipeListView"
+             xmlns:viewmodel1="clr-namespace:CookbookXF.ViewModels"
+             x:DataType="viewmodel1:RecipeListViewModel">
+
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <CollectionView SelectionMode="Single"
+                    ItemsSource="{Binding RecipeSource}"
+                    SelectedItem="{Binding SelectedRecipe}"
+                        SelectionChangedCommand="{Binding OpenRecipeDetails}">
+            <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="viewmodel1:RecipeItemViewModel">
+                    <StackLayout Padding="15">
+                        <Label FontSize="30"  Text="{Binding Type}"/>
+                        <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Title}"/>
+                        <Label FontSize="30" Text="{Binding ShortDescription}"/>
+                        <Image Source="{Binding ThumbNailImage}"/>
+                    </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        
+      </CollectionView>
+        
+    </Grid>
+
+</ContentPage>

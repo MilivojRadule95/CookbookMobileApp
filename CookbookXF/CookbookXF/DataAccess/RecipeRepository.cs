@@ -11,23 +11,34 @@ namespace CookbookXF.DataAccess
 { 
     internal class RecipeRepository : IRecipeRepository
     {
-        
-
         private List<Recipe> _recipes = new List<Recipe>();
         private const string RecipeName = "recipe.json";
 
+        public RecipeRepository()
+        {
+            LoadRecipes();
+        }
+
         public void LoadRecipes()
         {
-            var resourceName = typeof(RecipeRepository).Assembly.GetManifestResourceNames();
+            var resourceNames = typeof(RecipeRepository).Assembly.GetManifestResourceNames();
+            var stream = typeof(RecipeRepository).Assembly.GetManifestResourceStream($"{Constants.ResourcePrefix}{RecipeName}" );
 
-            var path = Path.Combine(FileSystem.AppDataDirectory, RecipeName);
-            if (!File.Exists(path))
+            using (var reader = new StreamReader(stream))
             {
-                return;
+                var recipes = JsonConvert.DeserializeObject<RecipeList>(reader.ReadToEnd());
+                _recipes = recipes.Recipe;
             }
+             
 
-            var data = File.ReadAllText(path);
-            _recipes = JsonConvert.DeserializeObject<List<Recipe>>(data);
+            //var path = Path.Combine(FileSystem.AppDataDirectory, RecipeName);
+            //if (!File.Exists(path))
+            //{
+            //    return;
+            //}
+
+            //var data = File.ReadAllText(path);
+            //_recipes = JsonConvert.DeserializeObject<List<Recipe>>(data);
         }
 
         //public void AddRecipe(Recipe recipe)

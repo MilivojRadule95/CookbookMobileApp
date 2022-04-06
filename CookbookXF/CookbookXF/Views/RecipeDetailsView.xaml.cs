@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace CookbookXF.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RecipeDetalisView : ContentPage
+    public partial class RecipeDetailsView : ContentPage
     {
-        public RecipeDetalisView()
+        public RecipeDetailsView()
         {
             InitializeComponent();
         }

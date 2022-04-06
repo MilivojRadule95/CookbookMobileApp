@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CookbookXF.App">
     <Application.Resources>
+        
+        
+        <ResourceDictionary>
+            <Color x:Key="WindowBackgroundColor">white</Color>
+            <Color x:Key="WindowBackgroundColorDark">black</Color>
+            
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>
