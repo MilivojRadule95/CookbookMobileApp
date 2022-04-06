@@ -17,6 +17,7 @@ namespace CookbookXF.ViewModels
 
         private ObservableCollection<RecipeItemViewModel> _recipeSource;
         private RecipeItemViewModel _selectedRecipe;
+        
 
         public RecipeListViewModel(IRecipeRepository recipeRepository, INavigationService navigation)
         {
@@ -69,11 +70,13 @@ namespace CookbookXF.ViewModels
         }
 
         public ICommand OpenRecipeDetails { get; }
-        
-        
 
         
 
-       
+
+
+
+
+
     }
 }

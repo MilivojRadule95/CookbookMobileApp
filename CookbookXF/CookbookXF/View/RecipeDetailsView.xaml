@@ -4,7 +4,7 @@
              xmlns:viewmodels="clr-namespace:CookbookXF.ViewModels"
              x:Class="CookbookXF.View.RecipeDetailsView"
              x:DataType="viewmodels:RecipeDetailsViewModel"
-             >
+             BackgroundImageSource="bg.png">
     
     <ContentPage.Content>
         
@@ -19,14 +19,29 @@
             <CollectionView SelectionMode="Single"
                             ItemsSource="{Binding DetailsSource}"
                             SelectedItem="{Binding SelectedDetails}">
+                <CollectionView.Header>
+                    <Grid  Padding="10">
+                        <Label Margin="170,30,50,50"
+                           FontSize="35"
+                           FontAttributes="Bold" 
+                           Text="" />
+
+                        <ImageButton Source="back.png" 
+                                 HorizontalOptions="Start" 
+                                 BackgroundColor="Transparent"
+                                 WidthRequest="100"
+                                 HeightRequest="100"
+                                 Margin="0"/>
+                    </Grid>
+                </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:DetailsInfoViewModel">
                         <StackLayout>
-                            <Label FontSize="30" Text="{Binding Title}"/>
-                            <Label FontSize="30" Text="{Binding LongDescription}"/>
+                            <Label FontSize="22" HorizontalTextAlignment="Center" FontAttributes="bold" Text="{Binding Title}"/>
+                            <Label FontSize="14" Text="{Binding LongDescription}"/>
                             <Label FontSize="30" Text="{Binding Ingredient}"/>
                             <Label FontSize="30" Text="{Binding Steps}"/>
-                            <Image Source="{Binding BackgroundImage}"/>
+                            <Image Aspect="AspectFill" Source="{Binding BackgroundImage}"/>
                         </StackLayout>
                         
                     </DataTemplate>
