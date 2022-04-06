@@ -13,11 +13,15 @@ namespace CookbookXF.ViewModels
         private ObservableCollection<DetailsInfoViewModel> _detailsSource;
         private DetailsInfoViewModel _selectedDetails;
 
+        private string _title;
+        private string _longDescription;
+
         public RecipeDetailsViewModel(IRecipeRepository recipeRepository, INavigationService navigationService)
         {
             _recipeRepository = recipeRepository;
             _navigationService = navigationService;
         }
+
         public ObservableCollection<DetailsInfoViewModel> DetailsSource
         {
             get { return _detailsSource; }
@@ -25,6 +29,26 @@ namespace CookbookXF.ViewModels
             {
                 _detailsSource = value;
                 OnPropertyChanged(nameof(DetailsSource));
+            }
+        }
+
+        public string Title
+        {
+            get { return _title; }
+            set 
+            { 
+                _title = value; 
+                OnPropertyChanged(nameof(Title));
+            }
+        }
+
+        public string LongDescription
+        {
+            get { return _longDescription; }
+            set 
+            { 
+                _longDescription = value; 
+                OnPropertyChanged(nameof(LongDescription));
             }
         }
 
@@ -44,6 +68,8 @@ namespace CookbookXF.ViewModels
         public void LoadDetails(Recipe recipe)
         {
             DetailsSource = new ObservableCollection<DetailsInfoViewModel>() { new DetailsInfoViewModel(recipe)};
+            Title = recipe.Name;
+            LongDescription = recipe.LongDescription;
         }
 
         

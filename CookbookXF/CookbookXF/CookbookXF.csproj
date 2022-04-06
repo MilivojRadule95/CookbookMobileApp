@@ -84,25 +84,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\MealsView.xaml.cs">
+    <Compile Update="Views\MealsView.xaml.cs">
       <DependentUpon>MealsView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\RecipeDetailsView.xaml.cs">
+    <Compile Update="Views\RecipeDetailsView.xaml.cs">
       <DependentUpon>RecipeDetailsView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\RecipeListView.xaml.cs">
+    <Compile Update="Views\RecipeListView.xaml.cs">
       <DependentUpon>RecipeListView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\MealsView.xaml">
+    <EmbeddedResource Update="Views\MealsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RecipeDetailsView.xaml">
+    <EmbeddedResource Update="Views\RecipeDetailsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RecipeListView.xaml">
+    <EmbeddedResource Update="Views\RecipeListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

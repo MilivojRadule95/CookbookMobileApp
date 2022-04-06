@@ -7,15 +7,19 @@
              >
     
     <ContentPage.Content>
-        
+
         <Grid>
-            
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-           
-            
+            <StackLayout>
+
+            <Label Text="{Binding Title}" FontSize="50"/>
+            <Label Text="{Binding LongDescription}" FontSize="50"/>
+            </StackLayout>    
+
+            <!--
             <CollectionView SelectionMode="Single"
                             ItemsSource="{Binding DetailsSource}"
                             SelectedItem="{Binding SelectedDetails}">
@@ -33,6 +37,7 @@
                 </CollectionView.ItemTemplate>
                 
             </CollectionView>
+            -->
             
         </Grid>
     </ContentPage.Content>
