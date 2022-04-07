@@ -7,7 +7,7 @@ namespace CookbookXF.ViewModels
 {
     internal class RecipeDetailsViewModel : BaseViewModel
     {
-        private readonly IRecipeRepository _recipeRepository;
+        
         private readonly INavigationService _navigationService;
 
         private ObservableCollection<DetailsInfoViewModel> _detailsSource;
@@ -16,9 +16,8 @@ namespace CookbookXF.ViewModels
         private string _title;
         private string _longDescription;
 
-        public RecipeDetailsViewModel(IRecipeRepository recipeRepository, INavigationService navigationService)
+        public RecipeDetailsViewModel(INavigationService navigationService)
         {
-            _recipeRepository = recipeRepository;
             _navigationService = navigationService;
         }
 

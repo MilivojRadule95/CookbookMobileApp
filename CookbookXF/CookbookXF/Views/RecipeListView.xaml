@@ -11,6 +11,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <!--<Label Text="{Binding Type}"/>-->
         <CollectionView SelectionMode="Single"
                     ItemsSource="{Binding RecipeSource}"
                     SelectedItem="{Binding SelectedRecipe}"
@@ -18,7 +19,6 @@
             <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="viewmodel1:RecipeItemViewModel">
                     <StackLayout Padding="15">
-                        <Label FontSize="30"  Text="{Binding Type}"/>
                         <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Title}"/>
                         <Label FontSize="30" Text="{Binding ShortDescription}"/>
                         <Image Source="{Binding ThumbNailImage}"/>

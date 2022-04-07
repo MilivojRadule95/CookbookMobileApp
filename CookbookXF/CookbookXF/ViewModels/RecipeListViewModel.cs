@@ -24,7 +24,7 @@ namespace CookbookXF.ViewModels
             _navigationService = navigation;
 
             OpenRecipeDetails = new Command<string>(OnSelectOpenRecipeDetails);
-
+            
         }
 
         public ObservableCollection<RecipeItemViewModel> RecipeSource
@@ -55,9 +55,9 @@ namespace CookbookXF.ViewModels
             List<RecipeItemViewModel> recipesListViewModel = new List<RecipeItemViewModel>();
             IEnumerable<Recipe> recipes = _recipeRepository.GetRecipeByType(type);
 
-            foreach (var recipe in recipes)
+            foreach (var rec in recipes)
             {
-                recipesListViewModel.Add(new RecipeItemViewModel(recipe));
+                recipesListViewModel.Add(new RecipeItemViewModel(rec));
             }
 
             RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipesListViewModel);
@@ -69,11 +69,6 @@ namespace CookbookXF.ViewModels
         }
 
         public ICommand OpenRecipeDetails { get; }
-        
-        
 
-        
-
-       
     }
 }
