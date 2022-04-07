@@ -47,7 +47,8 @@ namespace CookbookXF.ViewModels
             get { return _backgroundImage; }
             set
             {
-                _backgroundImage = value; OnPropertyChanged(nameof(BackgroundImage)); 
+                _backgroundImage = value;
+                OnPropertyChanged(nameof(BackgroundImage)); 
             }
         }
 

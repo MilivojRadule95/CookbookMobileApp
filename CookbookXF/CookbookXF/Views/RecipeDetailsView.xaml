@@ -6,39 +6,5 @@
              x:DataType="viewmodels:RecipeDetailsViewModel"
              >
     
-    <ContentPage.Content>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <StackLayout>
-
-            <Label Text="{Binding Title}" FontSize="50"/>
-            <Label Text="{Binding LongDescription}" FontSize="50"/>
-            </StackLayout>    
-
-            <!--
-            <CollectionView SelectionMode="Single"
-                            ItemsSource="{Binding DetailsSource}"
-                            SelectedItem="{Binding SelectedDetails}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="viewmodels:DetailsInfoViewModel">
-                        <StackLayout>
-                            <Label FontSize="30" Text="{Binding Title}"/>
-                            <Label FontSize="30" Text="{Binding LongDescription}"/>
-                            <Label FontSize="30" Text="{Binding Ingredient}"/>
-                            <Label FontSize="30" Text="{Binding Steps}"/>
-                            <Image Source="{Binding BackgroundImage}"/>
-                        </StackLayout>
-                        
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-                
-            </CollectionView>
-            -->
-            
-        </Grid>
-    </ContentPage.Content>
+   
 </ContentPage>
