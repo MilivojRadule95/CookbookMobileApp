@@ -6,7 +6,41 @@
              x:DataType="viewmodels:RecipeDetailsViewModel"
              >
     <Grid>
-        <Label Text="{Binding Title}" FontSize="50"/>
+        <Label Text="{Binding Title}"
+               Padding="0,20,0,0"
+               HorizontalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center"
+               FontSize="Body"/>
+        <Label Text="{Binding LongDescription}"
+               Padding="0,50,0,0"
+               HorizontalOptions="CenterAndExpand"/>
+        
+        <!--<StackLayout>
+            <ListView ItemsSource="{Binding IngredientsSource}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:IngridientsViewModel">
+                        <StackLayout>
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Amount}"/>
+                            <Label Text="{Binding Unit}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
+        <StackLayout>
+            <ListView ItemsSource="{Binding StepsSource}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:StepsViewModel">
+                        <StackLayout>
+                            <Label Text="{Binding Text}"/>
+                            <Image Source="{Binding Image}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>-->
     </Grid>
   
 </ContentPage>

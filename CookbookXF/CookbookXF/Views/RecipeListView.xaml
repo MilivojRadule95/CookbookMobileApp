@@ -5,6 +5,7 @@
              xmlns:viewmodel1="clr-namespace:CookbookXF.ViewModels"
              x:DataType="viewmodel1:RecipeListViewModel"
              BackgroundImageSource="bg.png">
+    
     <ContentPage.Resources>
         <Style TargetType="Grid">
             <Setter Property="VisualStateManager.VisualStateGroups">
@@ -23,7 +24,11 @@
     </ContentPage.Resources>
 
     <Grid>
-       
+        <Label Text="{Binding Type}"
+               FontSize="50"
+               HorizontalTextAlignment="Center"
+               Padding="0,100,0,0"/>
+
         <CollectionView SelectionMode="Single"
                     ItemsSource="{Binding RecipeSource}"
                     SelectedItem="{Binding SelectedRecipe}"
