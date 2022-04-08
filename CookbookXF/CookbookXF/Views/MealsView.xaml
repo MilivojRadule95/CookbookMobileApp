@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:CookbookXF.ViewModels"
              x:Class="CookbookXF.View.MealsView"
              x:DataType="viewmodels:MealsViewModel"
-             BackgroundImageSource="bg.png">
+             BackgroundImageSource="bg.png"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark}, Light={StaticResource BackgroundColorLight}}">
     <ContentPage.Resources>
         <Style TargetType="Grid">
             <Setter Property="VisualStateManager.VisualStateGroups">

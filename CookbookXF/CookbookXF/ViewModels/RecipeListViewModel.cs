@@ -26,6 +26,7 @@ namespace CookbookXF.ViewModels
             _navigationService = navigation;
 
             OpenRecipeDetails = new Command<string>(OnSelectOpenRecipeDetails);
+            GoBack = new Command(OnSelectedGoBack);
             
         }
 
@@ -81,7 +82,12 @@ namespace CookbookXF.ViewModels
             _navigationService.NavigateToRecipeDetailsView(SelectedRecipe.Recipe);
         }
 
-        public ICommand OpenRecipeDetails { get; }
+        private void OnSelectedGoBack()
+        {
+            _navigationService.GoBack();
+        }
 
+        public ICommand OpenRecipeDetails { get; }
+        public ICommand GoBack { get; }
     }
 }

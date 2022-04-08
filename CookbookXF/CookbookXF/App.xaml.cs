@@ -38,8 +38,6 @@ namespace CookbookXF
             }
         }
 
-        
-
         protected override void OnStart()
         {
         }

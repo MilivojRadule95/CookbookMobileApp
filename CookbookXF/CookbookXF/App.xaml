@@ -7,6 +7,27 @@
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="black-mango-medium.ttf#Font"/>
             </Style>
+
+            <Color x:Key="BackgroundColorLight">WhiteSmoke</Color>
+            <Color x:Key="BackgroundColorDark">Black</Color>
+            
+            <Color x:Key="TextColorDark">White</Color>
+            <Color x:Key="TextColorLight">black</Color>
+
+            <Color x:Key="CardBackgroundLight">White</Color>
+            <Color x:Key="CardBackgroundDark">Black</Color>
+
+            <Style x:Key="BaseLabel" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"/>
+            </Style>
+
+            <Style x:Key="MealsCard" TargetType="Frame">
+                <Setter Property="HasShadow"
+                        Value="True"/>
+                <Setter Property="BackgroundColor"
+                        Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark},Light={StaticResource CardBackgroundLight}}"/>
+            </Style>
             
         </ResourceDictionary>
     </Application.Resources>
