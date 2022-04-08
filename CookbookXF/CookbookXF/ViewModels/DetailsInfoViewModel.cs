@@ -10,20 +10,16 @@ namespace CookbookXF.ViewModels
     {
         public DetailsInfoViewModel(Recipe recipe)
         {
-            Recipe = recipe;
-
-            Title = recipe.Name;
+            Recipe = recipe;          
             Steps = recipe.Steps;
-            Ingredient = recipe.Ingredients;
-            LongDescription = recipe.LongDescription;
+            Ingredient = recipe.Ingredients;          
             BackgroundImage = ImageSource.FromResource($"{Constants.ResourcePrefix} {recipe.BackgroundImage}");
 
         }
         
         private List<Step> _steps;
         private List<Ingredient> _ingredient;
-        private string _longDescription;
-        private string _title;
+        
         private ImageSource _backgroundImage;
         public Recipe Recipe { get; }
 
@@ -46,25 +42,7 @@ namespace CookbookXF.ViewModels
                 OnPropertyChanged(nameof(Ingredient));
             }
         }
-        public string LongDescription
-        {
-            get { return _longDescription; }
-            set 
-            {
-                _longDescription = value;
-                OnPropertyChanged(nameof(LongDescription));
-            }
-        }
-       
-        public string Title
-        {
-            get { return _title; }
-            set 
-            { 
-                _title = value;
-                OnPropertyChanged(nameof(Title));
-            }
-        }
+        
 
         public ImageSource BackgroundImage
         {

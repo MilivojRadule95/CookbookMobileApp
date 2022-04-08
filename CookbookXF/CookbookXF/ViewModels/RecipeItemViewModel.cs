@@ -8,10 +8,9 @@ namespace CookbookXF.ViewModels
         public RecipeItemViewModel(Recipe recipe)
         {
             Recipe = recipe;
-
-            Title = recipe.Name;
-            ShortDescription = recipe.ShortDescription;
+            Title = recipe.Name;           
             Type = recipe.Type;
+            ShortDescription = recipe.ShortDescription;
             ThumbNailImage = ImageSource.FromResource($"{Constants.ResourcePrefix}{recipe.ThumbnailImage}");
         }
 
@@ -52,15 +51,17 @@ namespace CookbookXF.ViewModels
             }
         }
 
+
         public string ShortDescription
         {
             get { return _shortDescription; }
-            set 
-            { 
-                _shortDescription = value; 
+            set
+            {
+                _shortDescription = value;
                 OnPropertyChanged(nameof(ShortDescription));
             }
         }
+
 
 
 

@@ -5,50 +5,34 @@
              x:Class="CookbookXF.View.RecipeDetailsView"
              x:DataType="viewmodels:RecipeDetailsViewModel"
              BackgroundImageSource="bg.png">
-    
-    <ContentPage.Content>
-        
-        <Grid>
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-           
-            
-            <CollectionView SelectionMode="Single"
-                            ItemsSource="{Binding DetailsSource}"
-                            SelectedItem="{Binding SelectedDetails}">
-                <CollectionView.Header>
-                    <Grid  Padding="10">
-                        <Label Margin="170,30,50,50"
-                           FontSize="35"
-                           FontAttributes="Bold" 
-                           Text="" />
 
-                        <ImageButton Source="back.png" 
-                                 HorizontalOptions="Start" 
-                                 BackgroundColor="Transparent"
-                                 WidthRequest="100"
-                                 HeightRequest="100"
-                                 Margin="0"/>
-                    </Grid>
-                </CollectionView.Header>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="viewmodels:DetailsInfoViewModel">
-                        <StackLayout>
-                            <Label FontSize="22" HorizontalTextAlignment="Center" FontAttributes="bold" Text="{Binding Title}"/>
-                            <Label FontSize="14" Text="{Binding LongDescription}"/>
-                            <Label FontSize="30" Text="{Binding Ingredient}"/>
-                            <Label FontSize="30" Text="{Binding Steps}"/>
-                            <Image Aspect="AspectFill" Source="{Binding BackgroundImage}"/>
-                        </StackLayout>
-                        
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-                
-            </CollectionView>
-            
-        </Grid>
-    </ContentPage.Content>
+    <Grid Padding="10" ColumnSpacing="0" RowSpacing="0" >
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <ImageButton Source="back.png"
+                     WidthRequest="100"
+                     HeightRequest="100"
+                     HorizontalOptions="Start"
+                     Grid.Row="0"
+                     BackgroundColor="Transparent"/>
+        
+                     <Label    FontSize="20" 
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"                              
+                               Text="{Binding Title}"
+                               Grid.Row="1"
+                               />
+        
+                     <Label    FontSize="15" 
+                               HorizontalTextAlignment="Center" 
+                               Text="{Binding LongDescription}"
+                               Grid.Row="2"
+                               />
+        
+
+    </Grid>
 </ContentPage>
