@@ -20,8 +20,6 @@ namespace CookbookXF.ViewModels
 
         
 
-        private string _title;
-        private string _longDescription;
 
         public RecipeDetailsViewModel(INavigationService navigationService)
         {
