@@ -15,30 +15,7 @@ namespace CookbookXF.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        //izbaci konstruktor
-        //public BaseViewModel(string title)
-        //{
-        //    Title = title; 
-        //}
-
-        //private string _title;
-
-        //public string Title
-        //{
-        //    get => _title;
-        //    set 
-        //    {
-        //        if (_title == value)
-        //        {
-        //            return;
-        //        }
-
-        //        _title = value;
-
-        //        OnePropertyChanged();
-        //    }
-        //}
-
+       
         //private bool _isBusy;
         //public bool IsNotBusy => !IsBusy;
 

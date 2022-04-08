@@ -11,7 +11,6 @@ namespace CookbookXF.ViewModels
 
             Title = recipe.Name;
             ShortDescription = recipe.ShortDescription;
-            Type = recipe.Type;
             ThumbNailImage = ImageSource.FromResource($"{Constants.ResourcePrefix}{recipe.ThumbnailImage}");
         }
 
@@ -19,7 +18,6 @@ namespace CookbookXF.ViewModels
 
         private string _title;
         private string _shortDescription;
-        private string _type;
         private ImageSource _thumbNailImage;
        
         public ImageSource ThumbNailImage
@@ -29,16 +27,6 @@ namespace CookbookXF.ViewModels
             {
                 _thumbNailImage = value;
                 OnPropertyChanged(nameof(ThumbNailImage));
-            }
-        }
-
-        public string Type
-        {
-            get { return _type; }
-            set
-            { 
-                _type = value; 
-                OnPropertyChanged(nameof(Type));
             }
         }
 

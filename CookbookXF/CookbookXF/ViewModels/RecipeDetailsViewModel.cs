@@ -11,6 +11,9 @@ namespace CookbookXF.ViewModels
         private readonly INavigationService _navigationService;
 
         private ObservableCollection<DetailsInfoViewModel> _detailsSource;
+        private ObservableCollection<IngridientsViewModel> _ingridientsSource;
+        private ObservableCollection<StepsViewModel> _stepsSource;
+
         private DetailsInfoViewModel _selectedDetails;
 
         private string _title;
@@ -28,6 +31,26 @@ namespace CookbookXF.ViewModels
             {
                 _detailsSource = value;
                 OnPropertyChanged(nameof(DetailsSource));
+            }
+        }
+
+        public ObservableCollection<IngridientsViewModel> IngredientsSource
+        {
+            get { return _ingridientsSource; }
+            set 
+            {
+                _ingridientsSource = value;
+                OnPropertyChanged(nameof(IngredientsSource));
+            }
+        }
+
+        public ObservableCollection<StepsViewModel> StepsSource
+        {
+            get { return _stepsSource; }
+            set
+            {
+                _stepsSource = value;
+                OnPropertyChanged(nameof(StepsSource));
             }
         }
 
@@ -67,8 +90,23 @@ namespace CookbookXF.ViewModels
         public void LoadDetails(Recipe recipe)
         {
             DetailsSource = new ObservableCollection<DetailsInfoViewModel>() { new DetailsInfoViewModel(recipe)};
+            
             Title = recipe.Name;
             LongDescription = recipe.LongDescription;
+
+            IngredientsSource = new ObservableCollection<IngridientsViewModel>() { new IngridientsViewModel() };
+
+            StepsSource = new ObservableCollection<StepsViewModel>() { new StepsViewModel() };
+
+            foreach (var ingredient in recipe.Ingredients)
+            {
+                var ingredientViewModel = new IngridientsViewModel();
+                ingredientViewModel.LoadIngredient(ingredient);
+                ingredient.Add(IngridientsViewModel);
+
+                    
+            }
+
         }
 
         
