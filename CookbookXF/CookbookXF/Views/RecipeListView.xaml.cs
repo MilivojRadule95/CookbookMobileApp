@@ -17,6 +17,6 @@ namespace CookbookXF.View
             InitializeComponent();
         }
 
-        
+       
     }
 }

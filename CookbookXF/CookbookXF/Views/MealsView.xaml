@@ -3,41 +3,88 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:CookbookXF.ViewModels"
              x:Class="CookbookXF.View.MealsView"
              x:DataType="viewmodels:MealsViewModel"
-             NavigationPage.HasNavigationBar="False">
-
-
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+             BackgroundImageSource="bg.png">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
         
-        <StackLayout Orientation="Horizontal"
-                     HeightRequest="400"
-                     BackgroundColor="LightSeaGreen">
-            
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
 
-
-
-            <CollectionView  
+            <CollectionView  Margin="0,0,0,0" Grid.Row="0" 
                 SelectionMode="Single"
                 ItemsSource="{Binding RecipeSource}"
                 SelectedItem="{Binding Category}"
                 SelectionChangedCommand="{Binding OpenListOfDishes}">
+                <CollectionView.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80">
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <ImageButton Source="podesavanja.png" 
+                         HorizontalOptions="End" 
+                         Grid.Row="0" 
+                         WidthRequest="80" 
+                         HeightRequest="80" 
+                         BackgroundColor="Transparent"/>
+                        
+                        <Label Text="Secret Recipes" 
+                   Grid.Row="1" 
+                   FontSize="33" 
+                   HorizontalOptions="Center" 
+                   TextColor="#72928A" 
+                   Margin="0"></Label>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" >
+
+                    </GridItemsLayout>
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:MealsCategoryViewModel">
-                        <StackLayout>
-                            <Label FontSize="30" Text="{Binding Type}"/>
-                        </StackLayout>
                         
+                            <Grid Grid.Row="1" Padding="5" Margin="10,50,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Image Aspect="AspectFill" 
+                                       Source="{Binding Image}" 
+                                       WidthRequest="150" 
+                                       HeightRequest="150" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center"/>
+                                
+                            </Grid>
+                        
+
+
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-                
+
             </CollectionView>
-        </StackLayout>
-    </Grid>
-       
-   
+
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

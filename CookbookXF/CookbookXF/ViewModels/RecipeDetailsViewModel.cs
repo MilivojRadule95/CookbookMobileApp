@@ -15,6 +15,10 @@ namespace CookbookXF.ViewModels
         private ObservableCollection<StepsViewModel> _stepsSource;
 
         private DetailsInfoViewModel _selectedDetails;
+        private string _longDescription;
+        private string _title;
+
+        
 
         private string _title;
         private string _longDescription;
@@ -27,7 +31,7 @@ namespace CookbookXF.ViewModels
         public ObservableCollection<DetailsInfoViewModel> DetailsSource
         {
             get { return _detailsSource; }
-            set 
+            set
             {
                 _detailsSource = value;
                 OnPropertyChanged(nameof(DetailsSource));
@@ -109,6 +113,6 @@ namespace CookbookXF.ViewModels
 
         }
 
-        
+
     }
 }

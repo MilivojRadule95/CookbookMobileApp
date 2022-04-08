@@ -3,26 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CookbookXF.View.RecipeListView"
              xmlns:viewmodel1="clr-namespace:CookbookXF.ViewModels"
-             x:DataType="viewmodel1:RecipeListViewModel">
+             x:DataType="viewmodel1:RecipeListViewModel"
+             BackgroundImageSource="bg.png">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
 
-    
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Label Text="{Binding Type}"/>
+       
         <CollectionView SelectionMode="Single"
                     ItemsSource="{Binding RecipeSource}"
                     SelectedItem="{Binding SelectedRecipe}"
                         SelectionChangedCommand="{Binding OpenRecipeDetails}">
+            <CollectionView.Header>
+                <Grid  Padding="10">
+                    <Label Margin="170,30,50,50"
+                           FontSize="35"
+                           FontAttributes="Bold" 
+                           Text="" />
+
+                    <ImageButton Source="back.png" 
+                                 HorizontalOptions="Start" 
+                                 BackgroundColor="Transparent"
+                                 WidthRequest="100"
+                                 HeightRequest="100"
+                                 Margin="0"/>
+                </Grid>
+            </CollectionView.Header>
             <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="viewmodel1:RecipeItemViewModel">
-                    <StackLayout Padding="15">
-                        <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Title}"/>
-                        <Label FontSize="30" Text="{Binding ShortDescription}"/>
-                        <Image Source="{Binding ThumbNailImage}"/>
-                    </StackLayout>
+
+                    <Grid>
+                        <StackLayout Padding="15">
+                            <Label FontSize="22" 
+                               HorizontalTextAlignment="Center" 
+                               FontAttributes="Bold" 
+                               LineBreakMode="TailTruncation" 
+                               MaxLines="2" 
+                               Text="{Binding Title}"/>
+                            <Label FontSize="15" 
+                               HorizontalTextAlignment="Center" 
+                               Text="{Binding ShortDescription}"/>
+                            <Image Aspect="AspectFill" Source="{Binding ThumbNailImage}" 
+                                BackgroundColor="Transparent"/>
+                        </StackLayout>
+                    </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>
         

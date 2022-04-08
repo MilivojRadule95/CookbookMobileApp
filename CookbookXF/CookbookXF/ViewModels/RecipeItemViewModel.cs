@@ -40,15 +40,17 @@ namespace CookbookXF.ViewModels
             }
         }
 
+
         public string ShortDescription
         {
             get { return _shortDescription; }
-            set 
-            { 
-                _shortDescription = value; 
+            set
+            {
+                _shortDescription = value;
                 OnPropertyChanged(nameof(ShortDescription));
             }
         }
+
 
 
 

@@ -12,6 +12,15 @@ namespace CookbookXF.ViewModels
 {
     internal class MealsViewModel : BaseViewModel
     {
+        private Dictionary<string, string> _typeImageMap = new Dictionary<string, string>
+        {
+            { "Breakfast", "breakfast.png" },
+            { "Snack", "snack.png" },
+            { "Lunch", "lunch.png" },          
+            { "Dinner", "dinner.png" },
+            
+            
+        };
         private readonly IRecipeRepository _recipeRepository;
         private readonly INavigationService _navigationService;
 
@@ -31,13 +40,25 @@ namespace CookbookXF.ViewModels
 
         public void LoadAllCategoriesOfMeal()
         {
+           
             List<MealsCategoryViewModel> mealsViewModel = new List<MealsCategoryViewModel>();
             IEnumerable<string> meals = _recipeRepository.GetRecipeTypes();
 
             foreach (var meal in meals)
             {
-                mealsViewModel.Add(new MealsCategoryViewModel(meal));
-            }
+               
+                if (_typeImageMap.ContainsKey(meal))
+                {
+                mealsViewModel.Add(new MealsCategoryViewModel(meal, _typeImageMap[meal]));
+
+                }
+                else
+                {
+                    mealsViewModel.Add(new MealsCategoryViewModel(meal, "DefaultImage.png"));
+                }
+            } 
+            
+           
 
             RecipeSource = new ObservableCollection<MealsCategoryViewModel>(mealsViewModel);
 
