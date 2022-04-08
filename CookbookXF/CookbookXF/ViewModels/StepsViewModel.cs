@@ -9,9 +9,9 @@ namespace CookbookXF.ViewModels
 {
     internal class StepsViewModel : BaseViewModel
     {
-        public StepsViewModel()
+        public StepsViewModel(Step step)
         {
-            
+            LoadStep(step);
         }
 
         private string _text;

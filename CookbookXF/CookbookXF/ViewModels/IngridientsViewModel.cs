@@ -11,9 +11,9 @@ namespace CookbookXF.ViewModels
         private string _amount;
         private string _unit;
 
-        public IngridientsViewModel()
+        public IngridientsViewModel(Ingredient ingredient)
         {
-            
+            LoadIngredient(ingredient);
         }
 
         public void LoadIngredient(Ingredient ingredient)

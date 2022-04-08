@@ -62,7 +62,7 @@ namespace CookbookXF.ViewModels
             }
         }
 
-        public void LoadRecipe(string type, Recipe recipe)
+        public void LoadRecipe(string type)
         {
             List<RecipeItemViewModel> recipesListViewModel = new List<RecipeItemViewModel>();
             IEnumerable<Recipe> recipes = _recipeRepository.GetRecipeByType(type);
@@ -73,7 +73,7 @@ namespace CookbookXF.ViewModels
             }
 
             RecipeSource = new ObservableCollection<RecipeItemViewModel>(recipesListViewModel);
-            Type = recipe.Type;
+            Type = type;
         }
 
         private void OnSelectOpenRecipeDetails(string type)

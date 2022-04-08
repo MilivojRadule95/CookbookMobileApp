@@ -5,6 +5,8 @@
              x:Class="CookbookXF.View.RecipeDetailsView"
              x:DataType="viewmodels:RecipeDetailsViewModel"
              >
-    
+    <Grid>
+        <Label Text="{Binding Title}" FontSize="50"/>
+    </Grid>
   
 </ContentPage>

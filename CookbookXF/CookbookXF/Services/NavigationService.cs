@@ -21,13 +21,6 @@ namespace CookbookXF.Services
         public void GoBack()
         {
             Application.Current.MainPage.Navigation.PopModalAsync();
-
-            var lastView = Application.Current.MainPage.Navigation.NavigationStack.Last();
-            //if (lastView is MealsView mealsView
-            //    && mealsView.BindingContext is MealsViewModel mealsViewModel)
-            //{
-            //    mealsViewModel.LoadRecipe("");
-            //}
         }
 
         public void NavigateToRecipeListView(string type)

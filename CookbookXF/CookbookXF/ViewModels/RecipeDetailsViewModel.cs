@@ -7,33 +7,15 @@ namespace CookbookXF.ViewModels
 {
     internal class RecipeDetailsViewModel : BaseViewModel
     {
-        
         private readonly INavigationService _navigationService;
-
-        private ObservableCollection<DetailsInfoViewModel> _detailsSource;
         private ObservableCollection<IngridientsViewModel> _ingridientsSource;
         private ObservableCollection<StepsViewModel> _stepsSource;
-
-        private DetailsInfoViewModel _selectedDetails;
         private string _longDescription;
         private string _title;
-
-        
-
 
         public RecipeDetailsViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-        }
-
-        public ObservableCollection<DetailsInfoViewModel> DetailsSource
-        {
-            get { return _detailsSource; }
-            set
-            {
-                _detailsSource = value;
-                OnPropertyChanged(nameof(DetailsSource));
-            }
         }
 
         public ObservableCollection<IngridientsViewModel> IngredientsSource
@@ -76,39 +58,28 @@ namespace CookbookXF.ViewModels
             }
         }
 
-        public DetailsInfoViewModel SelectedDetails
-        {
-            get
-            {
-                return _selectedDetails;
-            }
-            set
-            {
-                _selectedDetails = value;
-                OnPropertyChanged(nameof(SelectedDetails));
-            }
-        }
-
         public void LoadDetails(Recipe recipe)
         {
-            DetailsSource = new ObservableCollection<DetailsInfoViewModel>() { new DetailsInfoViewModel(recipe)};
-            
             Title = recipe.Name;
             LongDescription = recipe.LongDescription;
 
-            IngredientsSource = new ObservableCollection<IngridientsViewModel>() { new IngridientsViewModel() };
+            IngredientsSource = new ObservableCollection<IngridientsViewModel>();
 
-            StepsSource = new ObservableCollection<StepsViewModel>() { new StepsViewModel() };
+            StepsSource = new ObservableCollection<StepsViewModel>();
 
             foreach (var ingredient in recipe.Ingredients)
             {
-                var ingredientViewModel = new IngridientsViewModel();
-                ingredientViewModel.LoadIngredient(ingredient);
-                ingredient.Add(IngridientsViewModel);
-
-                    
+                var ingredientViewModel = new IngridientsViewModel(ingredient);
+                
+                IngredientsSource.Add(ingredientViewModel);
             }
 
+            foreach (var step in recipe.Steps)
+            {
+                var stepViewModel = new StepsViewModel(step);
+
+                StepsSource.Add(stepViewModel);
+            }
         }
 
 
