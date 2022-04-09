@@ -16,7 +16,7 @@ namespace CookbookXF.Models
 
         [JsonProperty("steps")]
         public List<Step> Steps { get; set; }
-
+        // This is a test of git.s
         [JsonProperty("backgroundImage")]
         public string BackgroundImage { get; set; }
 
