@@ -36,5 +36,10 @@ namespace CookbookXF.Services
             viewModel.LoadDetails(recipe);
             Application.Current.MainPage.Navigation.PushModalAsync(new RecipeDetailsView { BindingContext = viewModel });
         }
+
+        public void NavigateToSettingsView()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

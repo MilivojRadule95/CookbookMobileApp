@@ -11,6 +11,7 @@ namespace CookbookXF.Services
         void NavigateToRecipeListView(string type);
         void NavigateToRecipeDetailsView(Recipe recipe);
         void GoBack();
+        void NavigateToSettingsView();
 
     }
 }

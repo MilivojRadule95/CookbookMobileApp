@@ -88,7 +88,13 @@ namespace CookbookXF.ViewModels
         {
             _navigationService.NavigateToRecipeListView(Category.Type);
         }
+
+        private void OnSelectedSettingsScreen()
+        {
+           
+        }
         public ICommand OpenListOfDishes { get; }
+        public ICommand SettingsScreen { get; }
 
     }
 }

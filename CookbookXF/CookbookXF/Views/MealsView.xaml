@@ -48,7 +48,8 @@
                          Grid.Row="0" 
                          WidthRequest="80" 
                          HeightRequest="80" 
-                         BackgroundColor="Transparent"/>
+                         BackgroundColor="Transparent"
+                                     Command="{Binding }"/>
                         
                         <Label Text="Secret Recipes" 
                    Grid.Row="1" 
