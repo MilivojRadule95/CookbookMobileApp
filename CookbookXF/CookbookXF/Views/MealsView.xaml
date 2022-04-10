@@ -49,7 +49,7 @@
                          WidthRequest="80" 
                          HeightRequest="80" 
                          BackgroundColor="Transparent"
-                                     Command="{Binding }"/>
+                                     Command="{Binding SettingsScreen}"/>
                         
                         <Label Text="Secret Recipes" 
                    Grid.Row="1" 

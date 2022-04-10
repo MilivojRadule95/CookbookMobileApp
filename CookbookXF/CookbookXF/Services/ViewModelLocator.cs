@@ -18,6 +18,7 @@ namespace CookbookXF.Services
         public RecipeListViewModel RecipeListViewModel => _serviceProvider.GetService<RecipeListViewModel>();
         public MealsViewModel MealsViewModel => _serviceProvider.GetService<MealsViewModel>();
         public RecipeDetailsViewModel RecipeDetailsViewModel => _serviceProvider.GetService<RecipeDetailsViewModel>();
+        public SettingsViewModel SettingsViewModel => _serviceProvider.GetService<SettingsViewModel>();
 
     }
 }

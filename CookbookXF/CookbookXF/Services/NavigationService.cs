@@ -1,10 +1,6 @@
 ﻿using CookbookXF.Models;
 using CookbookXF.View;
-using CookbookXF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using CookbookXF.Views;
 using Xamarin.Forms;
 
 namespace CookbookXF.Services
@@ -39,7 +35,8 @@ namespace CookbookXF.Services
 
         public void NavigateToSettingsView()
         {
-            throw new NotImplementedException();
+            var viewModel = App.Locator.SettingsViewModel;
+            Application.Current.MainPage.Navigation.PushModalAsync(new SettingsView { BindingContext = viewModel});
         }
     }
 }

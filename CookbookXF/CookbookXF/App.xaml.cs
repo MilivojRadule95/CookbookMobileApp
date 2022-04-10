@@ -72,6 +72,7 @@ namespace CookbookXF
             serviceCollection.AddTransient<MealsViewModel>();
             serviceCollection.AddTransient<RecipeListViewModel>();
             serviceCollection.AddTransient<RecipeDetailsViewModel>();
+            serviceCollection.AddTransient<SettingsViewModel>();
             serviceCollection.AddSingleton<IRecipeRepository, RecipeRepository>();
             serviceCollection.AddSingleton<INavigationService, NavigationService>();
             _serviceProvider = serviceCollection.BuildServiceProvider();

@@ -17,18 +17,18 @@ namespace CookbookXF.Views
         {
             InitializeComponent();
 
-            switch (Settings.Theme)
-            {
-                case 0:
-                    RadioButtonSystem.IsChecked = true;
-                    break;
-                case 1:
-                    RadioButtonLight.IsChecked = true;
-                    break;
-                case 2:
-                    RadioButtonDark.IsChecked = true;
-                    break;
-            }
+            //switch (Settings.Theme)
+            //{
+            //    case 0:
+            //        RadioButtonSystem.IsChecked = true;
+            //        break;
+            //    case 1:
+            //        RadioButtonLight.IsChecked = true;
+            //        break;
+            //    case 2:
+            //        RadioButtonDark.IsChecked = true;
+            //        break;
+            //}
         }
 
         bool loaded;

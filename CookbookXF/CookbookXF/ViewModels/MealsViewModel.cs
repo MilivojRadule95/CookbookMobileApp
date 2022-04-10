@@ -34,6 +34,8 @@ namespace CookbookXF.ViewModels
 
             OpenListOfDishes = new Command<string>(OnSelectOpenListOfDishes);
             LoadAllCategoriesOfMeal();
+
+            SettingsScreen = new Command(OnSelectedSettingsScreen);
             
         }
 
@@ -91,7 +93,7 @@ namespace CookbookXF.ViewModels
 
         private void OnSelectedSettingsScreen()
         {
-           
+            _navigationService.NavigateToSettingsView();
         }
         public ICommand OpenListOfDishes { get; }
         public ICommand SettingsScreen { get; }

@@ -7,7 +7,7 @@
                         Dark={StaticResource WindowBackgroundColorDark}, 
                         Light={StaticResource WindowBackgroundColor}}">
 
-    <ContentPage.Resources>
+    <!--<ContentPage.Resources>
         <ResourceDictionary>
 
             <Color x:Key="LightRadioButtonColor">#F3F2F1</Color>
@@ -157,5 +157,5 @@
                 </Frame>
             </StackLayout>
         </Grid>
-    </ScrollView>
+    </ScrollView>-->
 </ContentPage>
