@@ -2,6 +2,8 @@
 using CookbookXF.Models;
 using CookbookXF.Services;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace CookbookXF.ViewModels
 {
@@ -16,6 +18,7 @@ namespace CookbookXF.ViewModels
         public RecipeDetailsViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            GoBack = new Command(OnSelectedGoBack);
         }
 
         public ObservableCollection<IngridientsViewModel> IngredientsSource
@@ -82,6 +85,11 @@ namespace CookbookXF.ViewModels
             }
         }
 
+        private void OnSelectedGoBack()
+        {
+            _navigationService.GoBack();
+        }
 
+        public ICommand GoBack { get; }
     }
 }

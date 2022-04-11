@@ -20,13 +20,14 @@ namespace CookbookXF.View
         private void Button_Clicked(object sender, EventArgs e)
         {
             Ingredients.IsVisible = true;
+            Steps.IsVisible = false;
            
         }
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
             Steps.IsVisible = true ;
-            
+            Ingredients.IsVisible = false ;
         }
     }
 }
