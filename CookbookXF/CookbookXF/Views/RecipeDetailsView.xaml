@@ -6,43 +6,37 @@
              x:DataType="viewmodels:RecipeDetailsViewModel"
              >
     <Grid ColumnSpacing="5">
-        <Frame BorderColor="Black"
-               CornerRadius="8"
-               BackgroundColor="Transparent">
-            <StackLayout>
-                <Label Text="{Binding Title}"
+        <StackLayout>
+            <Label Text="{Binding Title}"
                Padding="0,20,0,0"
                HorizontalOptions="CenterAndExpand"
                HorizontalTextAlignment="Center"
                FontSize="Body"/>
-                <Label Text="{Binding LongDescription}"
+            <Label Text="{Binding LongDescription}"
                Padding="0,50,0,0"
                HorizontalOptions="CenterAndExpand"/>
-            </StackLayout>
-        </Frame>
-        
+        </StackLayout>
+
         <StackLayout Orientation="Horizontal"
-                     Margin="0,100,0,0"
+                     Margin="0,200,0,0"
                      HorizontalOptions="Center">
-            <Button 
-                    x:Name="Ingredients"
+
+            <Button Style="{StaticResource Buttons}"
                     Text="Ingredients"
-                    Font="200"
-                    TextColor="Black"
-                    BorderColor="Red"/>
-            <Button x:Name="Steps"
+                    Clicked="Button_Clicked"/>
+            <Button Style="{StaticResource Buttons}"
                     Text="Steps"
-                    Font="200"
-                    TextColor="Black"
-                    BorderColor="Red"/>
+                    Clicked="Button_Clicked_1"/>
 
         </StackLayout>
 
 
-        <!--<Frame BorderColor="Black"
+        <Frame BorderColor="Black"
                CornerRadius="7"
                HasShadow="True"
-               Margin="0,300,0,0">
+               Margin="0,300,0,0"
+               IsVisible="true"
+               x:Name="Ingredients">
             <StackLayout>
                 <ListView ItemsSource="{Binding IngredientsSource}">
                     <ListView.ItemTemplate>
@@ -58,12 +52,14 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-        </Frame>-->
+        </Frame>
 
         <Frame BorderColor="Black"
                CornerRadius="7"
                HasShadow="True"
-               Margin="0,300,0,0">
+               Margin="0,300,0,0"
+               IsVisible="false"
+               x:Name="Steps">
             <StackLayout>
                 <ListView ItemsSource="{Binding StepsSource}">
                     <ListView.ItemTemplate>

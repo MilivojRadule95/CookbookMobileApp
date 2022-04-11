@@ -16,5 +16,17 @@ namespace CookbookXF.View
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Ingredients.IsVisible = true;
+           
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            Steps.IsVisible = true ;
+            
+        }
     }
 }
