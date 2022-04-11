@@ -19,6 +19,8 @@ namespace CookbookXF.ViewModels
         {
             _navigationService = navigationService;
             GoBack = new Command(OnSelectedGoBack);
+            DisplayIngredients = new Command(OnSelectedDisplayIngredients);
+            DisplaySteps = new Command(OnSelectedDisplaySteps);
         }
 
         public ObservableCollection<IngridientsViewModel> IngredientsSource
@@ -90,6 +92,18 @@ namespace CookbookXF.ViewModels
             _navigationService.GoBack();
         }
 
+        private void OnSelectedDisplayIngredients()
+        {
+            
+        }
+
+        private void OnSelectedDisplaySteps()
+        {
+           
+        }
+
         public ICommand GoBack { get; }
+        public ICommand DisplayIngredients { get; }
+        public ICommand DisplaySteps { get; }
     }
 }

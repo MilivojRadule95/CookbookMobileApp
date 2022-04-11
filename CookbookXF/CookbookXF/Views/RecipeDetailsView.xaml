@@ -5,7 +5,7 @@
              x:Class="CookbookXF.View.RecipeDetailsView"
              x:DataType="viewmodels:RecipeDetailsViewModel"
              >
-    <Grid ColumnSpacing="5">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -20,13 +20,14 @@
                                  Margin="0"
                                  Command="{Binding GoBack}"/>
             <Label Text="{Binding Title}"
-               Padding="0,20,0,0"
-               HorizontalOptions="CenterAndExpand"
-               HorizontalTextAlignment="Center"
-               FontSize="Body"/>
+                   Padding="0,20,0,0"
+                   HorizontalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"/>
             <Label Text="{Binding LongDescription}"
-               Padding="0,50,0,0"
-               HorizontalOptions="CenterAndExpand"/>
+                   Padding="0,50,0,0"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Body"/>
         </StackLayout>
 
         <Grid Grid.Row="1">
