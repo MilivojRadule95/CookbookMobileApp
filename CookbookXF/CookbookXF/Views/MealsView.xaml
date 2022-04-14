@@ -4,7 +4,8 @@
              x:Class="CookbookXF.View.MealsView"
              x:DataType="viewmodels:MealsViewModel"
              BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark}, Light={StaticResource BackgroundColorLight}}"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             >
              <!--BackgroundImageSource="bg.png"-->
              
     <ContentPage.Resources>
@@ -73,14 +74,20 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
 
-                                <Image Aspect="AspectFill" 
+                                <Image Aspect="AspectFit" 
                                        Source="{Binding Image}" 
-                                       WidthRequest="150" 
-                                       HeightRequest="150" 
+                                       WidthRequest="200" 
+                                       HeightRequest="200" 
                                        HorizontalOptions="Center" 
                                        VerticalOptions="Center"/>
-                                
-                            </Grid>
+
+                                <Label Text="{Binding Type}"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="End"
+                                       FontSize="30"
+                                       />
+
+                        </Grid>
                         
 
 

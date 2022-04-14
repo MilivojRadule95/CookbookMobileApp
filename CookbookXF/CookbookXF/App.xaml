@@ -4,7 +4,7 @@
              x:Class="CookbookXF.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Style TargetType="Label">
+            <Style TargetType="Label" x:Key="IvanaStyle">
                 <Setter Property="FontFamily" Value="black-mango-medium.ttf#Font"/>
             </Style>
 
@@ -29,17 +29,6 @@
                         Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark},Light={StaticResource CardBackgroundLight}}"/>
             </Style>
 
-            <Style x:Key="Buttons" TargetType="Button">
-                
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="WidthRequest" Value="150"/>
-                <Setter Property="HeightRequest" Value="25"/>
-                <Setter Property="CornerRadius" Value="7"/>
-                <Setter Property="FontSize" Value="Body"/>
-                <Setter Property="TextColor" Value="Red"/>
-
-            </Style>
-            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

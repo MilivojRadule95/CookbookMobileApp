@@ -1,5 +1,4 @@
 ﻿using CookbookXF.DataAccess;
-using CookbookXF.Helpers;
 using CookbookXF.Services;
 using CookbookXF.View;
 using CookbookXF.ViewModels;
@@ -20,7 +19,7 @@ namespace CookbookXF
         {
             InitializeComponent();
             SetupServices();
-            TheTheme.SetTheme();
+           
 
             MainPage = new NavigationPage(new MealsView { BindingContext = Locator.MealsViewModel });
             
@@ -43,28 +42,19 @@ namespace CookbookXF
 
         protected override void OnStart()
         {
-            OnResume();
+           
         }
 
         protected override void OnSleep()
         {
-            TheTheme.SetTheme();
-            RequestedThemeChanged -= App_RequestedThemeChanged;
+
         }
 
         protected override void OnResume()
         {
-            TheTheme.SetTheme();
-            RequestedThemeChanged += App_RequestedThemeChanged;
+            
         }
 
-        private void App_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
-        {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                TheTheme.SetTheme();
-            });
-        }
 
         private void SetupServices()
         {
